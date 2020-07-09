@@ -548,106 +548,705 @@
             <div id="articleContent">
                 <h1 id="Day05学习笔记–面向对象"><a href="#Day05学习笔记–面向对象" class="headerlink" title="Day05学习笔记–面向对象"></a>Day05学习笔记–面向对象</h1><h2 id="知识点1：面向对象的理解"><a href="#知识点1：面向对象的理解" class="headerlink" title="知识点1：面向对象的理解"></a>知识点1：面向对象的理解</h2><h3 id="1-面向过程-vs-面向对象"><a href="#1-面向过程-vs-面向对象" class="headerlink" title="1. 面向过程  vs  面向对象"></a>1. 面向过程  vs  面向对象</h3><p>二者都是一种思想，面向对象是相对于面向过程而言的。<strong>面向过程，强调的是功能行为，以函数为最小单位</strong>，考虑怎么做。面向对象，将功能封装进对象，<strong>强调具备了功能的对象</strong>，以类/对象为最小单位，考虑谁来做。</p>
 <hr>
-<h3 id="2-类与对象的理解"><a href="#2-类与对象的理解" class="headerlink" title="2. 类与对象的理解"></a>2. 类与对象的理解</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">面向对象中的两大核心概念</span><br><span class="line">* 1. 类（class）：对一类事物的描述，是抽象的、概念上的定义。</span><br><span class="line">* 2. 对象（object\instance）：由类派生(new)出的一个个的实体。</span><br></pre></td></tr></table></figure>
-
-<p><img src="assets/1593507543274.png" alt="1593507543274"></p>
-<h3 id="3-学习的三条主线"><a href="#3-学习的三条主线" class="headerlink" title="3. 学习的三条主线"></a>3. 学习的三条主线</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">面向对象编程的学习三条主线：</span><br><span class="line">* 1. 类及类中的成员：属性、方法、构造器；内部类、代码块</span><br><span class="line">* 2. 面向对象的三个特征：封装、继承、多态、（抽象）</span><br><span class="line">* 3. 其它关键字的使用：this\super\import\package\static\final\abstract\interface\....</span><br></pre></td></tr></table></figure>
-
-<p>说明：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">类的内部成员：</span><br><span class="line">*   属性 &#x3D; 成员变量 &#x3D; field</span><br><span class="line">*   方法 &#x3D; 成员方法 &#x3D; (成员)函数 &#x3D; method</span><br></pre></td></tr></table></figure>
-
-<h2 id="知识点2：类及对象的创建过程"><a href="#知识点2：类及对象的创建过程" class="headerlink" title="知识点2：类及对象的创建过程"></a>知识点2：类及对象的创建过程</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* 1. 设计类，就是设计类的内部成员。。</span><br><span class="line">*</span><br><span class="line">* 2. 设计类、创建对象、调用功能的步骤：</span><br><span class="line">* 第1步：创建类（实际上，就是创建类的成员:属性、方法）</span><br><span class="line">* 第2步：创建类的对象 （或 创建类的实例、类的实例化）</span><br><span class="line">* 第3步：通过&quot;对象.属性&quot;或&quot;对象.方法&quot;的方式，调用对象的内部结构</span><br></pre></td></tr></table></figure>
-
-<ul>
+<h3 id="2-类与对象的理解"><a href="#2-类与对象的理解" class="headerlink" title="2. 类与对象的理解"></a>2. 类与对象的理解</h3><pre><code>面向对象中的两大核心概念
+* 1. 类（class）：对一类事物的描述，是抽象的、概念上的定义。
+* 2. 对象（object\instance）：由类派生(new)出的一个个的实体。</code></pre><p><img src="assets/1593507543274.png" alt="1593507543274"></p>
+<h3 id="3-学习的三条主线"><a href="#3-学习的三条主线" class="headerlink" title="3. 学习的三条主线"></a>3. 学习的三条主线</h3><pre><code>面向对象编程的学习三条主线：
+* 1. 类及类中的成员：属性、方法、构造器；内部类、代码块
+* 2. 面向对象的三个特征：封装、继承、多态、（抽象）
+* 3. 其它关键字的使用：this\super\import\package\static\final\abstract\interface\....</code></pre><p>说明：</p>
+<pre><code>类的内部成员：
+*   属性 = 成员变量 = field
+*   方法 = 成员方法 = (成员)函数 = method</code></pre><h2 id="知识点2：类及对象的创建过程"><a href="#知识点2：类及对象的创建过程" class="headerlink" title="知识点2：类及对象的创建过程"></a>知识点2：类及对象的创建过程</h2><pre><code>* 1. 设计类，就是设计类的内部成员。。
+*
+* 2. 设计类、创建对象、调用功能的步骤：
+* 第1步：创建类（实际上，就是创建类的成员:属性、方法）
+* 第2步：创建类的对象 （或 创建类的实例、类的实例化）
+* 第3步：通过&quot;对象.属性&quot;或&quot;对象.方法&quot;的方式，调用对象的内部结构</code></pre><ul>
 <li>代码说明</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PhoneTest</span> </span>&#123;  <span class="comment">//测试类</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//数据类型  变量名 = 变量值</span></span><br><span class="line">        Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"><span class="comment">//        int number = scan.nextInt();</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建Phone类的对象</span></span><br><span class="line">        Phone iphone = <span class="keyword">new</span> Phone();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//通过"对象.属性"或"对象.方法"的方式，调用对象的内部结构</span></span><br><span class="line">        iphone.name = <span class="string">"苹果手机"</span>;</span><br><span class="line">        iphone.price = <span class="number">8999</span>;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"name:"</span> + iphone.name + <span class="string">", price:"</span> + iphone.price);</span><br><span class="line"></span><br><span class="line">        iphone.call();</span><br><span class="line">        iphone.sendMessage(<span class="string">"有内鬼，停止交易！"</span>);</span><br><span class="line">        String info = iphone.takePhoto();</span><br><span class="line">        System.out.println(info);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//##################</span></span><br><span class="line">        Phone iphone1 = <span class="keyword">new</span> Phone();</span><br><span class="line">        iphone1.name = <span class="string">"华为P40 pro"</span>;</span><br><span class="line">        iphone1.price = <span class="number">4999</span>;</span><br><span class="line">        System.out.println(<span class="string">"name:"</span> + iphone1.name + <span class="string">", price:"</span> + iphone1.price);</span><br><span class="line">        System.out.println(<span class="string">"name:"</span> + iphone.name + <span class="string">", price:"</span> + iphone.price);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//##################</span></span><br><span class="line">        Phone iphone2 = iphone;</span><br><span class="line">        iphone2.price = <span class="number">6999</span>;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"name:"</span> + iphone.name + <span class="string">", price:"</span> + iphone.price);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//##############</span></span><br><span class="line">        iphone.sendMessage(<span class="string">"你好！很高兴认识你"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Phone</span></span>&#123;</span><br><span class="line">    <span class="comment">//1. 设计属性</span></span><br><span class="line">    String name;<span class="comment">//手机名称</span></span><br><span class="line">    <span class="keyword">int</span> price;<span class="comment">//价格</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//2. 设计方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"手机可以拨打电话"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendMessage</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"发送信息："</span> + message);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">takePhoto</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//System.out.println("拍照");</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"拍照成功"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class PhoneTest {  //测试类
+    public static void main(String[] args) {
+        //数据类型  变量名 = 变量值
+        Scanner scan = new Scanner(System.in);
+//        int number = scan.nextInt();
+
+        //创建Phone类的对象
+        Phone iphone = new Phone();
+
+        //通过&quot;对象.属性&quot;或&quot;对象.方法&quot;的方式，调用对象的内部结构
+        iphone.name = &quot;苹果手机&quot;;
+        iphone.price = 8999;
+
+        System.out.println(&quot;name:&quot; + iphone.name + &quot;, price:&quot; + iphone.price);
+
+        iphone.call();
+        iphone.sendMessage(&quot;有内鬼，停止交易！&quot;);
+        String info = iphone.takePhoto();
+        System.out.println(info);
+
+        //##################
+        Phone iphone1 = new Phone();
+        iphone1.name = &quot;华为P40 pro&quot;;
+        iphone1.price = 4999;
+        System.out.println(&quot;name:&quot; + iphone1.name + &quot;, price:&quot; + iphone1.price);
+        System.out.println(&quot;name:&quot; + iphone.name + &quot;, price:&quot; + iphone.price);
+
+        //##################
+        Phone iphone2 = iphone;
+        iphone2.price = 6999;
+
+        System.out.println(&quot;name:&quot; + iphone.name + &quot;, price:&quot; + iphone.price);
+
+        //##############
+        iphone.sendMessage(&quot;你好！很高兴认识你&quot;);
+    }
+}
 
 
+class Phone{
+    //1. 设计属性
+    String name;//手机名称
+    int price;//价格
 
+    //2. 设计方法
+    public void call(){
+        System.out.println(&quot;手机可以拨打电话&quot;);
+    }
+    public void sendMessage(String message){
+        System.out.println(&quot;发送信息：&quot; + message);
+    }
+
+    public String takePhoto(){
+        //System.out.println(&quot;拍照&quot;);
+        return &quot;拍照成功&quot;;
+    }
+}</code></pre>
 <p>内存解析：</p>
 <p><img src="assets/1593507688267.png" alt="1593507688267"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">如果创建了类的多个对象，则每个对象拥有一套类的属性。当我们修改其中一个对象的属性时，不影响其它对象</span><br><span class="line">* 此属性的值。</span><br><span class="line">*</span><br><span class="line">*  如果将对象引用p1赋给新的变量p2，则p1和p2就共同指向了堆空间中唯一的一个对象实体。当我们通过其中一个引用</span><br><span class="line">*  修改对象的属性的话，则会导致另外引用对同一个属性的值的调用。</span><br></pre></td></tr></table></figure>
+<pre><code>如果创建了类的多个对象，则每个对象拥有一套类的属性。当我们修改其中一个对象的属性时，不影响其它对象
+* 此属性的值。
+*
+*  如果将对象引用p1赋给新的变量p2，则p1和p2就共同指向了堆空间中唯一的一个对象实体。当我们通过其中一个引用
+*  修改对象的属性的话，则会导致另外引用对同一个属性的值的调用。</code></pre><h2 id="知识点3：成员变量vs局部变量"><a href="#知识点3：成员变量vs局部变量" class="headerlink" title="知识点3：成员变量vs局部变量"></a>知识点3：成员变量vs局部变量</h2><pre><code>测试类中属性的定义
+*
+* 1. 回顾：变量的分类
+* ① 按照数据类型来分： 基本数据类型（8种）  vs  引用数据类型（类、数组、接口）
+*
+* ② 按照类中声明的位置： 成员变量（或属性）   vs  局部变量
+*   说明：成员变量：在类中直接定义的变量
+*        局部变量：在方法内、构造器内、代码块内等定义的变量
+*
+* 2.  成员变量（或属性）   vs  局部变量
+* 相同点：
+*       1. 变量声明的格式相同：数据类型 变量名 = 变量值
+*       2. 凡是变量，都需要先声明，后使用
+*       3. 都有其作用域。超出作用域，不可调用
+*
+* 不同点：
+*      1. 声明位置的不同。
+*          &gt; 成员变量：在类中直接定义的变量
+*          &gt; 局部变量：在方法内、构造器内、代码块内等定义的变量
+*      2. 是否可以使用权限修饰符进行修饰。
+*          &gt; 权限修饰符有：private \ 缺省 \ protected \ public
+*          &gt; 成员变量可以使用权限修饰符进行修饰 ；
+*            局部变量不可以使用权限修饰符进行修饰
+*          &gt; 暂时，我们在定义成员变量时，大家都使用缺省即可。（讲封装性时再说）
+*      3. 是否有默认初始化值的情况
+*          &gt; 成员变量都有默认初始化值
+*                  ① 如果成员变量是整型(byte\short\int\long)，则默认值为：0
+*                  ② 如果成员变量是浮点型(float \ double)，则默认值为：0.0
+*                  ③ 如果成员变量是boolean型，则默认值为：false
+*                  ④ 如果成员变量是char型，则默认值为：0 或 &#39;\u0000&#39;
+*                  ⑤ 如果成员变量是引用数据类型，则默认值为：null
+*
+*          &gt; 局部变量都没有默认初始化值。则意味着在调用局部变量之前，一定要显式的赋值。
+*
+*      4. 在内存中存储的位置不同
+*          &gt;成员变量存储在堆空间中
+*          &gt;局部变量存储在栈空间中
+*
+* @author shkstart
+* @create 2020-06-30 16:19
+*/</code></pre><ul>
+<li>代码演示</li>
+</ul>
+<pre><code class="java">public class PersonTest {
+    public static void main(String[] args) {
+        Person p1 = new Person();
 
-<h2 id="知识点3：成员变量vs局部变量"><a href="#知识点3：成员变量vs局部变量" class="headerlink" title="知识点3：成员变量vs局部变量"></a>知识点3：成员变量vs局部变量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">测试类中属性的定义</span><br><span class="line">*</span><br><span class="line">* 1. 回顾：变量的分类</span><br><span class="line">* ① 按照数据类型来分： 基本数据类型（8种）  vs  引用数据类型（类、数组、接口）</span><br><span class="line">*</span><br><span class="line">* ② 按照类中声明的位置： 成员变量（或属性）   vs  局部变量</span><br><span class="line">*   说明：成员变量：在类中直接定义的变量</span><br><span class="line">*        局部变量：在方法内、构造器内、代码块内等定义的变量</span><br><span class="line">*</span><br><span class="line">* 2.  成员变量（或属性）   vs  局部变量</span><br><span class="line">* 相同点：</span><br><span class="line">*       1. 变量声明的格式相同：数据类型 变量名 &#x3D; 变量值</span><br><span class="line">*       2. 凡是变量，都需要先声明，后使用</span><br><span class="line">*       3. 都有其作用域。超出作用域，不可调用</span><br><span class="line">*</span><br><span class="line">* 不同点：</span><br><span class="line">*      1. 声明位置的不同。</span><br><span class="line">*          &gt; 成员变量：在类中直接定义的变量</span><br><span class="line">*          &gt; 局部变量：在方法内、构造器内、代码块内等定义的变量</span><br><span class="line">*      2. 是否可以使用权限修饰符进行修饰。</span><br><span class="line">*          &gt; 权限修饰符有：private \ 缺省 \ protected \ public</span><br><span class="line">*          &gt; 成员变量可以使用权限修饰符进行修饰 ；</span><br><span class="line">*            局部变量不可以使用权限修饰符进行修饰</span><br><span class="line">*          &gt; 暂时，我们在定义成员变量时，大家都使用缺省即可。（讲封装性时再说）</span><br><span class="line">*      3. 是否有默认初始化值的情况</span><br><span class="line">*          &gt; 成员变量都有默认初始化值</span><br><span class="line">*                  ① 如果成员变量是整型(byte\short\int\long)，则默认值为：0</span><br><span class="line">*                  ② 如果成员变量是浮点型(float \ double)，则默认值为：0.0</span><br><span class="line">*                  ③ 如果成员变量是boolean型，则默认值为：false</span><br><span class="line">*                  ④ 如果成员变量是char型，则默认值为：0 或 &#39;\u0000&#39;</span><br><span class="line">*                  ⑤ 如果成员变量是引用数据类型，则默认值为：null</span><br><span class="line">*</span><br><span class="line">*          &gt; 局部变量都没有默认初始化值。则意味着在调用局部变量之前，一定要显式的赋值。</span><br><span class="line">*</span><br><span class="line">*      4. 在内存中存储的位置不同</span><br><span class="line">*          &gt;成员变量存储在堆空间中</span><br><span class="line">*          &gt;局部变量存储在栈空间中</span><br><span class="line">*</span><br><span class="line">* @author shkstart</span><br><span class="line">* @create 2020-06-30 16:19</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
+        System.out.println(p1.name +&quot;,&quot; + p1.age + &quot;,&quot; + p1.gender);
 
+        p1.sleep();
+        p1.eat(&quot;湖南臭豆腐&quot;);
+
+        Person p2 = new Person();
+        System.out.println(p2.age);
+    }
+}
+
+class Person{
+    //声明成员变量(属性)
+    String name;
+    int age = 1;
+    boolean gender;//性别
+
+    public void sleep(){
+        int hour = 6; //局部变量
+        System.out.println(&quot;人每天应该至少保证&quot; + hour + &quot;小时的睡眠&quot;);
+    }
+
+    public void eat(String food){//food:局部变量
+        System.out.println(&quot;我喜欢吃：&quot; + food);
+    }
+
+}</code></pre>
+<h2 id="知识点4：方法的声明"><a href="#知识点4：方法的声明" class="headerlink" title="知识点4：方法的声明"></a>知识点4：方法的声明</h2><pre><code class="java">* 类中方法的声明测试
+ * 1. 之前用过的一些方法：
+ *  Scanner类的nextInt() \ next()
+ *  Math类的random() \ sqrt(double d)
+ *  Arrays类的equals(int[] arr1,int[] arr2) \ toString(int[] arr) \ sort(int[] arr)
+ *           \ binarySearch(int[] arr,int value)
+ *
+ * 2. 类中方法声明的格式：
+ *   权限修饰符  返回值类型  方法名(形参列表){
+ *          方法体
+ *   }
+ *   说明：关于方法中的特殊关键字：static\final\abstract\...暂时先不考虑。
+ *
+ * 3. 方法声明的详细说明：
+ *   3.1 权限修饰符：指名当前方法被调用权限的大小。
+ *       涉及到的权限修饰符有：private 、 缺省 、 protected 、 public。 详细细节见《封装性》
+ *       目前，大家在声明方法时，默认使用public即可。
+ *   3.2  返回值类型 ：
+ *       &gt; 可以分为：有具体的返回值类型  vs  没有返回值类型：void
+ *       &gt; 有具体的返回值类型，可以使用任何的变量类型。比如：基本数据类型、引用数据类型
+ *       &gt; 有具体的返回值类型的方法，在调用方法结束后，一定要返回满足要求的返回值类型的变量或常量
+ *     补充：return的使用：
+ *         在有具体返回值类型的方法中，一定需要使用“return + 变量/常量”的方法给方法返回指定的数据。
+ *         如果方法没有返回值类型，也可以使用&quot;return;&quot;结构，表示结束当前方法的执行。
+ *
+ *    3.3 方法名：属于标识符，命名时满足标识符命名的规则和规范。“见名知意”
+ *    3.4 形参列表：
+ *      格式：参数类型1 参数名1,参数类型2,参数名2,...
+ *      方法在声明时，不要给形参列表的变量赋值。当我们调用方法时，才给形参列表赋值：实参。
+ *    3.5 方法体：执行方法时，主要操作的逻辑。
+
+  * 4. 如何确定定义一个方法时，要不要声明返回值类型？要不要声明形参？
+ *    ① 看题目要求。
+ *    ② 具体问题具体分析。</code></pre>
 <ul>
 <li>代码演示</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person p1 = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line">        System.out.println(p1.name +<span class="string">","</span> + p1.age + <span class="string">","</span> + p1.gender);</span><br><span class="line"></span><br><span class="line">        p1.sleep();</span><br><span class="line">        p1.eat(<span class="string">"湖南臭豆腐"</span>);</span><br><span class="line"></span><br><span class="line">        Person p2 = <span class="keyword">new</span> Person();</span><br><span class="line">        System.out.println(p2.age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="comment">//声明成员变量(属性)</span></span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">int</span> age = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">boolean</span> gender;<span class="comment">//性别</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> hour = <span class="number">6</span>; <span class="comment">//局部变量</span></span><br><span class="line">        System.out.println(<span class="string">"人每天应该至少保证"</span> + hour + <span class="string">"小时的睡眠"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">(String food)</span></span>&#123;<span class="comment">//food:局部变量</span></span><br><span class="line">        System.out.println(<span class="string">"我喜欢吃："</span> + food);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class PersonTest {
+    public static void main(String[] args) {
+        Person p = new Person();
+        p.printNumber();
+        int hour = 8;
+        p.sleep(hour);
 
-<h2 id="知识点4：方法的声明"><a href="#知识点4：方法的声明" class="headerlink" title="知识点4：方法的声明"></a>知识点4：方法的声明</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">* 类中方法的声明测试</span><br><span class="line"> * <span class="number">1</span>. 之前用过的一些方法：</span><br><span class="line"> *  Scanner类的nextInt() \ next()</span><br><span class="line"> *  Math类的random() \ sqrt(<span class="keyword">double</span> d)</span><br><span class="line"> *  Arrays类的equals(<span class="keyword">int</span>[] arr1,<span class="keyword">int</span>[] arr2) \ toString(<span class="keyword">int</span>[] arr) \ sort(<span class="keyword">int</span>[] arr)</span><br><span class="line"> *           \ binarySearch(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> value)</span><br><span class="line"> *</span><br><span class="line"> * <span class="number">2</span>. 类中方法声明的格式：</span><br><span class="line"> *   权限修饰符  返回值类型  方法名(形参列表)&#123;</span><br><span class="line"> *          方法体</span><br><span class="line"> *   &#125;</span><br><span class="line"> *   说明：关于方法中的特殊关键字：<span class="keyword">static</span>\<span class="keyword">final</span>\<span class="keyword">abstract</span>\...暂时先不考虑。</span><br><span class="line"> *</span><br><span class="line"> * <span class="number">3</span>. 方法声明的详细说明：</span><br><span class="line"> *   <span class="number">3.1</span> 权限修饰符：指名当前方法被调用权限的大小。</span><br><span class="line"> *       涉及到的权限修饰符有：<span class="keyword">private</span> 、 缺省 、 <span class="keyword">protected</span> 、 <span class="keyword">public</span>。 详细细节见《封装性》</span><br><span class="line"> *       目前，大家在声明方法时，默认使用<span class="keyword">public</span>即可。</span><br><span class="line"> *   <span class="number">3.2</span>  返回值类型 ：</span><br><span class="line"> *       &gt; 可以分为：有具体的返回值类型  vs  没有返回值类型：<span class="keyword">void</span></span><br><span class="line"> *       &gt; 有具体的返回值类型，可以使用任何的变量类型。比如：基本数据类型、引用数据类型</span><br><span class="line"> *       &gt; 有具体的返回值类型的方法，在调用方法结束后，一定要返回满足要求的返回值类型的变量或常量</span><br><span class="line"> *     补充：<span class="keyword">return</span>的使用：</span><br><span class="line"> *         在有具体返回值类型的方法中，一定需要使用“<span class="keyword">return</span> + 变量/常量”的方法给方法返回指定的数据。</span><br><span class="line"> *         如果方法没有返回值类型，也可以使用<span class="string">"return;"</span>结构，表示结束当前方法的执行。</span><br><span class="line"> *</span><br><span class="line"> *    <span class="number">3.3</span> 方法名：属于标识符，命名时满足标识符命名的规则和规范。“见名知意”</span><br><span class="line"> *    <span class="number">3.4</span> 形参列表：</span><br><span class="line"> *      格式：参数类型<span class="number">1</span> 参数名<span class="number">1</span>,参数类型<span class="number">2</span>,参数名<span class="number">2</span>,...</span><br><span class="line"> *      方法在声明时，不要给形参列表的变量赋值。当我们调用方法时，才给形参列表赋值：实参。</span><br><span class="line"> *    <span class="number">3.5</span> 方法体：执行方法时，主要操作的逻辑。</span><br><span class="line"> </span><br><span class="line">  * <span class="number">4</span>. 如何确定定义一个方法时，要不要声明返回值类型？要不要声明形参？</span><br><span class="line"> *    ① 看题目要求。</span><br><span class="line"> *    ② 具体问题具体分析。</span><br></pre></td></tr></table></figure>
+        System.out.println(&quot;##############&quot;);
+        p.eat();
 
-<ul>
-<li>代码演示</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person p = <span class="keyword">new</span> Person();</span><br><span class="line">        p.printNumber();</span><br><span class="line">        <span class="keyword">int</span> hour = <span class="number">8</span>;</span><br><span class="line">        p.sleep(hour);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"##############"</span>);</span><br><span class="line">        p.eat();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    Account acct;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printNumber</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">100</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i == <span class="number">40</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span>;<span class="comment">//用于结束方法</span></span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(i);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"hello!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Account <span class="title">getAccount</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Account();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getValue</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"><span class="comment">//        return age;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">(<span class="keyword">int</span> hour)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"昨天睡了"</span> + hour + <span class="string">"小时"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"人需要吃饭，补充营养"</span>);</span><br><span class="line">        System.out.println(<span class="string">"name = "</span> + name);</span><br><span class="line"></span><br><span class="line">        sleep(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        eat();</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Account</span></span>&#123;<span class="comment">//账户</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    }
+}
 
+class Person{
+    String name;
+    int age;
+    Account acct;
+
+    public void printNumber(){
+
+        for(int i = 0;i &lt; 100;i++){
+            if(i == 40){
+                return;//用于结束方法
+            }
+            System.out.println(i);
+        }
+
+        System.out.println(&quot;hello!&quot;);
+    }
+
+    public Account getAccount(){
+        boolean flag = true;
+        if(flag){
+            return null;
+        }
+
+        return new Account();
+
+    }
+
+    public int getValue(){
+        return 1;
+//        return age;
+    }
+
+    public void sleep(int hour){
+        System.out.println(&quot;昨天睡了&quot; + hour + &quot;小时&quot;);
+    }
+
+    public void eat(){
+        System.out.println(&quot;人需要吃饭，补充营养&quot;);
+        System.out.println(&quot;name = &quot; + name);
+
+        sleep(10);
+
+//        eat();
+
+    }
+
+}
+
+class Account{//账户
+
+}</code></pre>
 <ul>
 <li>补充说明</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* 5. &gt; 可以在当前类的方法中使用当前类定义的属性或其他的方法</span><br><span class="line">*    &gt; 方法内不能定义新的方法。</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code> * 5. &gt; 可以在当前类的方法中使用当前类定义的属性或其他的方法
+ *    &gt; 方法内不能定义新的方法。</code></pre><ul>
 <li>课后练习</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 2.利用面向对象的编程方法，设计类Circle计算圆的面积。</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> shkstart</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2020-07-01 11:37</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CircleTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Circle c1 = <span class="keyword">new</span> Circle();</span><br><span class="line"></span><br><span class="line">        c1.radius = <span class="number">1.2</span>;</span><br><span class="line">        <span class="comment">//对应方式一</span></span><br><span class="line"><span class="comment">//        double area = c1.findArea();</span></span><br><span class="line"><span class="comment">//        System.out.println("圆的半径为：" + c1.radius + ",面积为：" + area);</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//对应方式二：</span></span><br><span class="line">        c1.findArea();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Circle</span></span>&#123;<span class="comment">//圆</span></span><br><span class="line">    <span class="keyword">double</span> radius;<span class="comment">//半径</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//求圆的面积的方法</span></span><br><span class="line">    <span class="comment">//方式一：</span></span><br><span class="line"><span class="comment">//    public double findArea()&#123;</span></span><br><span class="line"><span class="comment">//        return Math.PI * radius * radius;</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line">    <span class="comment">//方式二：</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">findArea</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(Math.PI * radius * radius);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//错误的：</span></span><br><span class="line"><span class="comment">//    public double findArea(double r)&#123;</span></span><br><span class="line"><span class="comment">//        return Math.PI * r * r;</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">/**
+ * 2.利用面向对象的编程方法，设计类Circle计算圆的面积。
+ *
+ * @author shkstart
+ * @create 2020-07-01 11:37
+ */
+public class CircleTest {
+
+    public static void main(String[] args) {
+        Circle c1 = new Circle();
+
+        c1.radius = 1.2;
+        //对应方式一
+//        double area = c1.findArea();
+//        System.out.println(&quot;圆的半径为：&quot; + c1.radius + &quot;,面积为：&quot; + area);
+
+        //对应方式二：
+        c1.findArea();
+    }
+
+}
+
+class Circle{//圆
+    double radius;//半径
+
+    //求圆的面积的方法
+    //方式一：
+//    public double findArea(){
+//        return Math.PI * radius * radius;
+//    }
+    //方式二：
+    public void findArea(){
+        System.out.println(Math.PI * radius * radius);
+    }
+
+    //错误的：
+//    public double findArea(double r){
+//        return Math.PI * r * r;
+//    }
 
 
-
+}</code></pre>
 <h2 id="知识点5：方法的重载"><a href="#知识点5：方法的重载" class="headerlink" title="知识点5：方法的重载"></a>知识点5：方法的重载</h2><ul>
 <li>概念的理解</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* 1. 什么是方法的重载？同一个类中，相同方法名，不同参数列表的方法之间构成重载。</span><br><span class="line">*</span><br><span class="line">*   “两同一不同”：同一个类，相同方法名；参数个数 或 参数类型不同</span><br><span class="line">*</span><br><span class="line">* 2. 方法的重载与权限修饰符、返回值类型、形参名没有关系！</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code> * 1. 什么是方法的重载？同一个类中，相同方法名，不同参数列表的方法之间构成重载。
+ *
+ *   “两同一不同”：同一个类，相同方法名；参数个数 或 参数类型不同
+ *
+ * 2. 方法的重载与权限修饰符、返回值类型、形参名没有关系！</code></pre><ul>
 <li>代码演示</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OverLoadTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        OverLoadTest test = <span class="keyword">new</span> OverLoadTest();</span><br><span class="line">        test.show();</span><br><span class="line"></span><br><span class="line">        test.show(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"hello"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"萨瓦迪卡"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">(String info)</span></span>&#123;</span><br><span class="line">        System.out.println(info);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">show</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> i + j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">int</span> i,String info)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(String info,<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//    public void show(String info1,int j)&#123;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//    public String show(String info,int i)&#123;</span></span><br><span class="line"><span class="comment">//          return info + i;</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class OverLoadTest {
+    public static void main(String[] args) {
+        OverLoadTest test = new OverLoadTest();
+        test.show();
+
+        test.show(1,2);
+    }
+
+    public void show(){
+        System.out.println(&quot;hello&quot;);
+    }
+    public void show(int a){
+        System.out.println(&quot;萨瓦迪卡&quot;);
+    }
+
+     void show(String info){
+        System.out.println(info);
+    }
+    public int show(int i,int j){
+        return i + j;
+    }
+    private void show(int i,String info){
+
+    }
+    public void show(String info,int i){
+
+    }
+//    public void show(String info1,int j){
+//
+//    }
+
+//    public String show(String info,int i){
+//          return info + i;
+//    }
 
 
 
+}</code></pre>
 <ul>
 <li>重点</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* 3. 我们在调用类中的方法时，是如何确定调用的是某一个确定的方法呢？</span><br><span class="line"> *    通过方法名确定  ---&gt; 进一步通过形参列表确定</span><br></pre></td></tr></table></figure>
+<pre><code>* 3. 我们在调用类中的方法时，是如何确定调用的是某一个确定的方法呢？
+ *    通过方法名确定  ---&gt; 进一步通过形参列表确定</code></pre><h2 id="知识点6：可变形参的方法"><a href="#知识点6：可变形参的方法" class="headerlink" title="知识点6：可变形参的方法"></a>知识点6：可变形参的方法</h2><pre><code class="java">/**
+ *  可变形参方法的使用
+ *
+ *  1. JDK5.0新增的特性。
+ *  2. 格式为：形参类型 ... 形参名
+ *  3. 当调用可变形参的方法时，实参可以为0个，1个，2个，。。。
+ *  4. 可变形参的方法与方法同名的其他方法之间构成重载（排除第5点)
+ *  5. 一个类中，不能同时出现可变形参的方法 和 与其方法名相同且可变形参类型相同的数组的方法。
+ *  6. 如果一个方法中声明有可变形参，则可变形参一定声明在方法参数的最后。
+ *  7. 一个方法的形参中，最多声明一个可变个数的形参结构。
+ *
+ *
+ * @author shkstart
+ * @create 2020-07-01 14:59
+ */
+public class ArgsTest {
+    public static void main(String[] args) {
+
+//        int[] arr = new int[0];
+
+        ArgsTest test = new ArgsTest();
+//        test.show();
+//        test.show(&quot;abc&quot;);
+        test.show(&quot;abc&quot;,&quot;123&quot;,&quot;xyz&quot;);
+//
+        test.show(new String[]{&quot;abc&quot;,&quot;def&quot;});
+    }
+
+    public void show(){
+        System.out.println(&quot;show()&quot;);
+    }
+    public void show(String s){
+        System.out.println(&quot;show(String s)&quot;);
+    }
+
+    public void show(int i){
+        System.out.println(&quot;show(int i)&quot;);
+    }
+
+    public void show(String ... info){
+        System.out.println(&quot;show(String ... info)&quot;);
+        for(int i = 0;i &lt; info.length;i++){
+            System.out.println(info[i]);
+        }
+    }
+
+//    public void show(String[] info){
+//          for(int i = 0;i &lt; info.length;i++){
+//                System.out.println(info[i]);
+//          }
+//    }
+
+    //错误的
+//    public void show(String ... info,String i){
+//
+//    }
 
 
+}</code></pre>
+<h2 id="知识点7：方法参数的值传递机制-重难点"><a href="#知识点7：方法参数的值传递机制-重难点" class="headerlink" title="知识点7：方法参数的值传递机制(重难点)"></a>知识点7：方法参数的值传递机制(重难点)</h2><h3 id="1-变量的传递机制："><a href="#1-变量的传递机制：" class="headerlink" title="1. 变量的传递机制："></a>1. 变量的传递机制：</h3><pre><code>*  1. 如果传递的是基本数据类型的变量，则将变量本身保存的数据值传递过去
+*  2. 如果传递的是引用数据类型的变量，则将变量本身保存的地址值传递过去</code></pre><pre><code class="java">public class VariableTest {
 
-<h2 id="知识点6：可变形参的方法"><a href="#知识点6：可变形参的方法" class="headerlink" title="知识点6：可变形参的方法"></a>知识点6：可变形参的方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *  可变形参方法的使用</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *  1. JDK5.0新增的特性。</span></span><br><span class="line"><span class="comment"> *  2. 格式为：形参类型 ... 形参名</span></span><br><span class="line"><span class="comment"> *  3. 当调用可变形参的方法时，实参可以为0个，1个，2个，。。。</span></span><br><span class="line"><span class="comment"> *  4. 可变形参的方法与方法同名的其他方法之间构成重载（排除第5点)</span></span><br><span class="line"><span class="comment"> *  5. 一个类中，不能同时出现可变形参的方法 和 与其方法名相同且可变形参类型相同的数组的方法。</span></span><br><span class="line"><span class="comment"> *  6. 如果一个方法中声明有可变形参，则可变形参一定声明在方法参数的最后。</span></span><br><span class="line"><span class="comment"> *  7. 一个方法的形参中，最多声明一个可变个数的形参结构。</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> shkstart</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2020-07-01 14:59</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArgsTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//        int[] arr = new int[0];</span></span><br><span class="line"></span><br><span class="line">        ArgsTest test = <span class="keyword">new</span> ArgsTest();</span><br><span class="line"><span class="comment">//        test.show();</span></span><br><span class="line"><span class="comment">//        test.show("abc");</span></span><br><span class="line">        test.show(<span class="string">"abc"</span>,<span class="string">"123"</span>,<span class="string">"xyz"</span>);</span><br><span class="line"><span class="comment">//</span></span><br><span class="line">        test.show(<span class="keyword">new</span> String[]&#123;<span class="string">"abc"</span>,<span class="string">"def"</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"show()"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"show(String s)"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"show(int i)"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(String ... info)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"show(String ... info)"</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; info.length;i++)&#123;</span><br><span class="line">            System.out.println(info[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    public void show(String[] info)&#123;</span></span><br><span class="line"><span class="comment">//          for(int i = 0;i &lt; info.length;i++)&#123;</span></span><br><span class="line"><span class="comment">//                System.out.println(info[i]);</span></span><br><span class="line"><span class="comment">//          &#125;</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//错误的</span></span><br><span class="line"><span class="comment">//    public void show(String ... info,String i)&#123;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    public static void main(String[] args) {
+        int m = 10;
+        //对于基本数据类型变量来说：
+        int n = m;
+        n = 20;
+        System.out.println(&quot;m = &quot; + m);//10
 
+        //对于引用数据类型变量来说：
+        Order o1 = new Order();
+        o1.num = 10;
+        //
+        Order o2 = o1;
+        o2.num = 20;
 
+        System.out.println(&quot;o1.num = &quot; + o1.num);
 
-<h2 id="知识点7：方法参数的值传递机制-重难点"><a href="#知识点7：方法参数的值传递机制-重难点" class="headerlink" title="知识点7：方法参数的值传递机制(重难点)"></a>知识点7：方法参数的值传递机制(重难点)</h2><h3 id="1-变量的传递机制："><a href="#1-变量的传递机制：" class="headerlink" title="1. 变量的传递机制："></a>1. 变量的传递机制：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*  1. 如果传递的是基本数据类型的变量，则将变量本身保存的数据值传递过去</span><br><span class="line">*  2. 如果传递的是引用数据类型的变量，则将变量本身保存的地址值传递过去</span><br></pre></td></tr></table></figure>
+        //
+        int[] array1 = new int[]{2,3,5,7,11};
+        int[] array2 = array1;
+        array2[0] = 0;
+        System.out.println(array1[0]);//0
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">VariableTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = <span class="number">10</span>;</span><br><span class="line">        <span class="comment">//对于基本数据类型变量来说：</span></span><br><span class="line">        <span class="keyword">int</span> n = m;</span><br><span class="line">        n = <span class="number">20</span>;</span><br><span class="line">        System.out.println(<span class="string">"m = "</span> + m);<span class="comment">//10</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//对于引用数据类型变量来说：</span></span><br><span class="line">        Order o1 = <span class="keyword">new</span> Order();</span><br><span class="line">        o1.num = <span class="number">10</span>;</span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">        Order o2 = o1;</span><br><span class="line">        o2.num = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"o1.num = "</span> + o1.num);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">        <span class="keyword">int</span>[] array1 = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">11</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span>[] array2 = array1;</span><br><span class="line">        array2[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        System.out.println(array1[<span class="number">0</span>]);<span class="comment">//0</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Order</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-方法形参的值传递机制"><a href="#2-方法形参的值传递机制" class="headerlink" title="2. 方法形参的值传递机制"></a>2. 方法形参的值传递机制</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*  1. 形参：方法声明时，小括号内的参数。</span><br><span class="line">*     实参：方法调用时，实际传递给形参的数据</span><br><span class="line">*</span><br><span class="line">*  2. 如果方法的形参是基本数据类型的变量，则将实参保存的数据值传递给形参变量。</span><br><span class="line">*     如果方法的形参是引用数据类型的变量，则将实参保存的地址值传递给形参变量。</span><br></pre></td></tr></table></figure>
-
-<ul>
+    }
+}
+class Order{
+    int num;
+}</code></pre>
+<h3 id="2-方法形参的值传递机制"><a href="#2-方法形参的值传递机制" class="headerlink" title="2. 方法形参的值传递机制"></a>2. 方法形参的值传递机制</h3><pre><code>*  1. 形参：方法声明时，小括号内的参数。
+*     实参：方法调用时，实际传递给形参的数据
+*
+*  2. 如果方法的形参是基本数据类型的变量，则将实参保存的数据值传递给形参变量。
+*     如果方法的形参是引用数据类型的变量，则将实参保存的地址值传递给形参变量。</code></pre><ul>
 <li>基本数据类型</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ValueTransferTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">int</span> n = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"m = "</span> + m + <span class="string">", n = "</span> + n);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//交换两个变量的值</span></span><br><span class="line"><span class="comment">//        int temp = m;</span></span><br><span class="line"><span class="comment">//        m = n;</span></span><br><span class="line"><span class="comment">//        n = temp;</span></span><br><span class="line">        ValueTransferTest test = <span class="keyword">new</span> ValueTransferTest();</span><br><span class="line">        test.swap(m,n);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"m = "</span> + m + <span class="string">", n = "</span> + n);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> m ,<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = m;</span><br><span class="line">        m = n;</span><br><span class="line">        n = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class ValueTransferTest {
+    public static void main(String[] args) {
+        int m = 10;
+        int n = 20;
 
+        System.out.println(&quot;m = &quot; + m + &quot;, n = &quot; + n);
+
+        //交换两个变量的值
+//        int temp = m;
+//        m = n;
+//        n = temp;
+        ValueTransferTest test = new ValueTransferTest();
+        test.swap(m,n);
+
+        System.out.println(&quot;m = &quot; + m + &quot;, n = &quot; + n);
+    }
+
+    public void swap(int m ,int n){
+        int temp = m;
+        m = n;
+        n = temp;
+    }
+}
+</code></pre>
 <p>对应图示：</p>
 <p><img src="/Users/mymac/Desktop/Java/2_%E6%AF%8F%E6%97%A5%E7%AC%94%E8%AE%B0/assets/1593593444278.png" alt="1593593444278"></p>
 <ul>
 <li>引用数据类型</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ValueTransferTest1</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Data data = <span class="keyword">new</span> Data();</span><br><span class="line">        data.m = <span class="number">10</span>;</span><br><span class="line">        data.n = <span class="number">20</span>;</span><br><span class="line">        System.out.println(<span class="string">"m = "</span> + data.m +<span class="string">", n = "</span> + data.n);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//交换的操作</span></span><br><span class="line">        ValueTransferTest1 test = <span class="keyword">new</span> ValueTransferTest1();</span><br><span class="line">        test.swap(data);</span><br><span class="line">        System.out.println(<span class="string">"m = "</span> + data.m +<span class="string">", n = "</span> + data.n);</span><br><span class="line"></span><br><span class="line">        System.out.println(data);<span class="comment">//com.atguigu.java1.Data@1540e19d</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//        User user = data;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(Data data1)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = data1.m ;</span><br><span class="line">        data1.m = data1.n;</span><br><span class="line">        data1.n = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Data</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m ;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class ValueTransferTest1 {
 
+    public static void main(String[] args) {
+        Data data = new Data();
+        data.m = 10;
+        data.n = 20;
+        System.out.println(&quot;m = &quot; + data.m +&quot;, n = &quot; + data.n);
+
+        //交换的操作
+        ValueTransferTest1 test = new ValueTransferTest1();
+        test.swap(data);
+        System.out.println(&quot;m = &quot; + data.m +&quot;, n = &quot; + data.n);
+
+        System.out.println(data);//com.atguigu.java1.Data@1540e19d
+
+//        User user = data;
+    }
+
+    public void swap(Data data1){
+        int temp = data1.m ;
+        data1.m = data1.n;
+        data1.n = temp;
+    }
+}
+class Data{
+    int m ;
+    int n;
+}
+
+class User{
+
+}</code></pre>
 <p>对应图示：</p>
 <p><img src="/Users/mymac/Desktop/Java/2_%E6%AF%8F%E6%97%A5%E7%AC%94%E8%AE%B0/assets/1593593479742.png" alt="1593593479742"></p>
-<h3 id="3-练习1"><a href="#3-练习1" class="headerlink" title="3. 练习1"></a>3. 练习1</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> shkstart</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2020-07-01 16:23</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ValueTransferTest2</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">34</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">4</span>, <span class="number">7</span>, -<span class="number">87</span>, <span class="number">0</span>, <span class="number">55</span>, <span class="number">98</span>&#125;;</span><br><span class="line"></span><br><span class="line">        System.out.println(Arrays.toString(arr));</span><br><span class="line"></span><br><span class="line">        ValueTransferTest2 test = <span class="keyword">new</span> ValueTransferTest2();</span><br><span class="line">        test.sort(arr, <span class="string">"ascend"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(Arrays.toString(arr));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] arr, String sortMethod)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="string">"ascend"</span>.equals(sortMethod)) &#123;<span class="comment">//从小到大</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr.length - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                        <span class="comment">//最初的写法：正确</span></span><br><span class="line"><span class="comment">//                        int temp = arr[j];</span></span><br><span class="line"><span class="comment">//                        arr[j] = arr[j + 1];</span></span><br><span class="line"><span class="comment">//                        arr[j + 1] = temp;</span></span><br><span class="line">                        <span class="comment">//错误的写法</span></span><br><span class="line"><span class="comment">//                        swap(arr[j], arr[j + 1]);</span></span><br><span class="line">                        <span class="comment">//正确的写法</span></span><br><span class="line">                        swap(arr,j,j+<span class="number">1</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"descend"</span>.equals(sortMethod)) &#123;<span class="comment">//从大到小</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr.length - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (arr[j] &lt; arr[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                        <span class="comment">//最初的写法：正确</span></span><br><span class="line"><span class="comment">//                        int temp = arr[j];</span></span><br><span class="line"><span class="comment">//                        arr[j] = arr[j + 1];</span></span><br><span class="line"><span class="comment">//                        arr[j + 1] = temp;</span></span><br><span class="line">                        <span class="comment">//错误的写法</span></span><br><span class="line"><span class="comment">//                        swap(arr[j], arr[j + 1]);</span></span><br><span class="line">                        <span class="comment">//正确的写法</span></span><br><span class="line">                        swap(arr,j,j+<span class="number">1</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"排序方式错误！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    public void swap(int i,int j)&#123;</span></span><br><span class="line"><span class="comment">//        int temp = i;</span></span><br><span class="line"><span class="comment">//        i = j;</span></span><br><span class="line"><span class="comment">//        j = temp;</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = arr[i];</span><br><span class="line">        arr[i] = arr[j];</span><br><span class="line">        arr[j] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-练习1"><a href="#3-练习1" class="headerlink" title="3. 练习1"></a>3. 练习1</h3><pre><code class="java">/**
+ * @author shkstart
+ * @create 2020-07-01 16:23
+ */
+public class ValueTransferTest2 {
 
-<h3 id="4-练习2："><a href="#4-练习2：" class="headerlink" title="4.练习2："></a>4.练习2：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TransferTest3</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        TransferTest3 test = <span class="keyword">new</span> TransferTest3();</span><br><span class="line">        test.first();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">first</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">5</span>;</span><br><span class="line">        Value v = <span class="keyword">new</span> Value();</span><br><span class="line">        v.i = <span class="number">25</span>;</span><br><span class="line">        second(v, i);</span><br><span class="line">        System.out.println(v.i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">second</span><span class="params">(Value v, <span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">        i = <span class="number">0</span>;</span><br><span class="line">        v.i = <span class="number">20</span>;</span><br><span class="line">        Value val = <span class="keyword">new</span> Value();</span><br><span class="line">        v = val;</span><br><span class="line">        System.out.println(v.i + <span class="string">" "</span> + i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Value</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">15</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    public static void main(String[] args) {
 
+        int[] arr = new int[]{34, 4, 2, 6, 6, 4, 7, -87, 0, 55, 98};
+
+        System.out.println(Arrays.toString(arr));
+
+        ValueTransferTest2 test = new ValueTransferTest2();
+        test.sort(arr, &quot;ascend&quot;);
+
+        System.out.println(Arrays.toString(arr));
+
+    }
+
+    public void sort(int[] arr, String sortMethod) {
+        if (&quot;ascend&quot;.equals(sortMethod)) {//从小到大
+            for (int i = 0; i &lt; arr.length - 1; i++) {
+                for (int j = 0; j &lt; arr.length - 1 - i; j++) {
+                    if (arr[j] &gt; arr[j + 1]) {
+                        //最初的写法：正确
+//                        int temp = arr[j];
+//                        arr[j] = arr[j + 1];
+//                        arr[j + 1] = temp;
+                        //错误的写法
+//                        swap(arr[j], arr[j + 1]);
+                        //正确的写法
+                        swap(arr,j,j+1);
+                    }
+                }
+            }
+
+        } else if (&quot;descend&quot;.equals(sortMethod)) {//从大到小
+            for (int i = 0; i &lt; arr.length - 1; i++) {
+                for (int j = 0; j &lt; arr.length - 1 - i; j++) {
+                    if (arr[j] &lt; arr[j + 1]) {
+                        //最初的写法：正确
+//                        int temp = arr[j];
+//                        arr[j] = arr[j + 1];
+//                        arr[j + 1] = temp;
+                        //错误的写法
+//                        swap(arr[j], arr[j + 1]);
+                        //正确的写法
+                        swap(arr,j,j+1);
+                    }
+                }
+            }
+        } else {
+            System.out.println(&quot;排序方式错误！&quot;);
+        }
+    }
+
+//    public void swap(int i,int j){
+//        int temp = i;
+//        i = j;
+//        j = temp;
+//    }
+
+    public void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+}</code></pre>
+<h3 id="4-练习2："><a href="#4-练习2：" class="headerlink" title="4.练习2："></a>4.练习2：</h3><pre><code class="java">public class TransferTest3 {
+    public static void main(String args[]) {
+        TransferTest3 test = new TransferTest3();
+        test.first();
+    }
+    public void first() {
+        int i = 5;
+        Value v = new Value();
+        v.i = 25;
+        second(v, i);
+        System.out.println(v.i);
+    }
+    public void second(Value v, int i) {
+        i = 0;
+        v.i = 20;
+        Value val = new Value();
+        v = val;
+        System.out.println(v.i + &quot; &quot; + i);
+    }
+}
+
+class Value {
+    int i = 15;
+}
+</code></pre>
 <p>对应的图示：</p>
 <p><img src="/Users/mymac/Desktop/Java/2_%E6%AF%8F%E6%97%A5%E7%AC%94%E8%AE%B0/assets/1593593604769.png" alt="1593593604769"></p>
-<h2 id="补充内容："><a href="#补充内容：" class="headerlink" title="补充内容："></a>补充内容：</h2><h3 id="NullPointerException的理解"><a href="#NullPointerException的理解" class="headerlink" title="NullPointerException的理解"></a>NullPointerException的理解</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *  关于面向对象内容中的NullPointerException的说明：</span></span><br><span class="line"><span class="comment"> *  凡是引用数据类型的变量（对象、数组）,如果取值为null时，通过此变量调用其内部结构的话，一定就是</span></span><br><span class="line"><span class="comment"> *  NullPointerException的异常。</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> shkstart</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2020-07-01 9:15</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NullPointerExceptionTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        User u1 = <span class="keyword">new</span> User();</span><br><span class="line"><span class="comment">//        u1 = null;</span></span><br><span class="line"><span class="comment">//        u1.name = "孔江江";</span></span><br><span class="line"><span class="comment">//        u1.show();</span></span><br><span class="line">        System.out.println(u1.name);</span><br><span class="line"><span class="comment">//        System.out.println(u1.name.toString());</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span></span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">        String str = <span class="keyword">null</span>;</span><br><span class="line">        System.out.println(<span class="string">"我是一个用户"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="补充内容："><a href="#补充内容：" class="headerlink" title="补充内容："></a>补充内容：</h2><h3 id="NullPointerException的理解"><a href="#NullPointerException的理解" class="headerlink" title="NullPointerException的理解"></a>NullPointerException的理解</h3><pre><code class="java">/**
+ *  关于面向对象内容中的NullPointerException的说明：
+ *  凡是引用数据类型的变量（对象、数组）,如果取值为null时，通过此变量调用其内部结构的话，一定就是
+ *  NullPointerException的异常。
+ *
+ * @author shkstart
+ * @create 2020-07-01 9:15
+ */
+public class NullPointerExceptionTest {
+    public static void main(String[] args) {
+        User u1 = new User();
+//        u1 = null;
+//        u1.name = &quot;孔江江&quot;;
+//        u1.show();
+        System.out.println(u1.name);
+//        System.out.println(u1.name.toString());
+    }
+}
 
-<h3 id="对象数组的理解"><a href="#对象数组的理解" class="headerlink" title="对象数组的理解"></a>对象数组的理解</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 定义类Student，包含三个属性：学号number(int)，年级state(int)，成绩score(int)。</span></span><br><span class="line"><span class="comment"> * 创建20个学生对象，学号为1到20，年级和成绩都由随机数确定。</span></span><br><span class="line"><span class="comment"> * 问题一：打印出3年级(state值为3）的学生信息。</span></span><br><span class="line"><span class="comment"> * 问题二：使用冒泡排序按学生成绩排序，并遍历所有学生信息</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 提示：</span></span><br><span class="line"><span class="comment"> * 1) 生成随机数：Math.random()，返回值类型double;</span></span><br><span class="line"><span class="comment"> * 2) 四舍五入取整：Math.round(double d)，返回值类型long。</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> shkstart</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2020-07-01 11:56</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentArrayTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line">        String[] arr1 = <span class="keyword">new</span> String[<span class="number">10</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//      创建20个学生对象</span></span><br><span class="line">        Student[] stus = <span class="keyword">new</span> Student[<span class="number">20</span>];<span class="comment">//虚位以待</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; stus.length; i++) &#123;</span><br><span class="line">            stus[i] = <span class="keyword">new</span> Student();</span><br><span class="line">            <span class="comment">//给每一个学生的属性赋值</span></span><br><span class="line">            <span class="comment">//学号</span></span><br><span class="line">            stus[i].number = i + <span class="number">1</span>;</span><br><span class="line">            <span class="comment">//年级：1-6</span></span><br><span class="line">            stus[i].state = (<span class="keyword">int</span>)(Math.random() * <span class="number">6</span> + <span class="number">1</span>);</span><br><span class="line">            <span class="comment">//成绩：0-100</span></span><br><span class="line">            stus[i].score = (<span class="keyword">int</span>)(Math.random() * <span class="number">101</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//问题一：打印出3年级(state值为3）的学生信息。</span></span><br><span class="line"><span class="comment">//        for (int i = 0; i &lt; stus.length; i++) &#123;</span></span><br><span class="line"><span class="comment">//            if(stus[i].state == 3)&#123;</span></span><br><span class="line"><span class="comment">//                stus[i].info();</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line">        <span class="comment">//问题二：使用冒泡排序按学生成绩排序，并遍历所有学生信息</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; stus.length - <span class="number">1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; stus.length - <span class="number">1</span> - i;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(stus[j].score &gt; stus[j + <span class="number">1</span>].score)&#123;</span><br><span class="line">                    Student temp = stus[j];</span><br><span class="line">                    stus[j] = stus[j + <span class="number">1</span>];</span><br><span class="line">                    stus[j + <span class="number">1</span>] = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; stus.length; i++) &#123;</span><br><span class="line">            stus[i].info();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> number;<span class="comment">//学号</span></span><br><span class="line">    <span class="keyword">int</span> state;<span class="comment">//年级</span></span><br><span class="line">    <span class="keyword">int</span> score;<span class="comment">//成绩</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">info</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"number : "</span> + number + <span class="string">", state : "</span> + state + <span class="string">", score : "</span> + score);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+class User{
+    String name;
+    int age;
+    public void show(){
+        String str = null;
+        System.out.println(&quot;我是一个用户&quot;);
+    }
+}</code></pre>
+<h3 id="对象数组的理解"><a href="#对象数组的理解" class="headerlink" title="对象数组的理解"></a>对象数组的理解</h3><pre><code class="java">/**
+ * 定义类Student，包含三个属性：学号number(int)，年级state(int)，成绩score(int)。
+ * 创建20个学生对象，学号为1到20，年级和成绩都由随机数确定。
+ * 问题一：打印出3年级(state值为3）的学生信息。
+ * 问题二：使用冒泡排序按学生成绩排序，并遍历所有学生信息
+ *
+ * 提示：
+ * 1) 生成随机数：Math.random()，返回值类型double;
+ * 2) 四舍五入取整：Math.round(double d)，返回值类型long。
+ *
+ * @author shkstart
+ * @create 2020-07-01 11:56
+ */
+public class StudentArrayTest {
+    public static void main(String[] args) {
+        int[] arr = new int[10];
+        String[] arr1 = new String[10];
 
+//      创建20个学生对象
+        Student[] stus = new Student[20];//虚位以待
+        for (int i = 0; i &lt; stus.length; i++) {
+            stus[i] = new Student();
+            //给每一个学生的属性赋值
+            //学号
+            stus[i].number = i + 1;
+            //年级：1-6
+            stus[i].state = (int)(Math.random() * 6 + 1);
+            //成绩：0-100
+            stus[i].score = (int)(Math.random() * 101);
+        }
+
+        //问题一：打印出3年级(state值为3）的学生信息。
+//        for (int i = 0; i &lt; stus.length; i++) {
+//            if(stus[i].state == 3){
+//                stus[i].info();
+//            }
+//        }
+        //问题二：使用冒泡排序按学生成绩排序，并遍历所有学生信息
+        for(int i = 0;i &lt; stus.length - 1;i++){
+            for(int j = 0;j &lt; stus.length - 1 - i;j++){
+                if(stus[j].score &gt; stus[j + 1].score){
+                    Student temp = stus[j];
+                    stus[j] = stus[j + 1];
+                    stus[j + 1] = temp;
+                }
+            }
+        }
+
+        for (int i = 0; i &lt; stus.length; i++) {
+            stus[i].info();
+        }
+    }
+}
+
+class Student{
+    int number;//学号
+    int state;//年级
+    int score;//成绩
+
+    public void info(){
+        System.out.println(&quot;number : &quot; + number + &quot;, state : &quot; + state + &quot;, score : &quot; + score);
+    }
+}</code></pre>
 <ul>
 <li>对应的内存解析</li>
 </ul>
@@ -884,24 +1483,25 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="1970/01/01/day03 学习笔记/">
+                <a href="1970/01/01/day02学习笔记/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="day03 学习笔记">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="day02学习笔记">
                         
-                        <span class="card-title">day03 学习笔记</span>
+                        <span class="card-title">day02学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Day03学习笔记–流程控制1. 流程控制介绍
+                            Day2学习笔记–变量、运算符知识点1：变量
+说明
 
-2. if-else结构
-结构
-
-1234567891011121314151617181920212223242526结构一：if(条件表达式)&#123;	执行代码块；&#125;结构二
+1. java中的变量定义的规则：数据类型 变量名 = 变量值
+2. 注意点：
+① 变量必须在初始化之后，才能使用
+② 每个变量都有其声明所在的作用域。在其作用域内都可以使用。出了作用域
                         
                     </div>
                     <div class="publish-info">

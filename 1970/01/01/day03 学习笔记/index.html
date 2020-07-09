@@ -551,66 +551,678 @@
 <h3 id="2-if-else结构"><a href="#2-if-else结构" class="headerlink" title="2. if-else结构"></a>2. if-else结构</h3><ul>
 <li>结构</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">结构一：</span><br><span class="line">if(条件表达式)&#123;</span><br><span class="line">	执行代码块；</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">结构二：二选一</span><br><span class="line">if(条件表达式)&#123;</span><br><span class="line">	执行代码块1;</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">	执行代码块2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">结构三：多选一</span><br><span class="line"></span><br><span class="line">if(条件表达式1)&#123;</span><br><span class="line">	执行代码块1;</span><br><span class="line">&#125;</span><br><span class="line">else if (条件表达式2)&#123;</span><br><span class="line">	执行代码块2;</span><br><span class="line">&#125;</span><br><span class="line">   ……</span><br><span class="line">else&#123;</span><br><span class="line">	执行代码块n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>结构一：
+if(条件表达式){
+    执行代码块；
+}
 
-<ul>
+
+结构二：二选一
+if(条件表达式){
+    执行代码块1;
+}
+else{
+    执行代码块2;
+}
+
+结构三：多选一
+
+if(条件表达式1){
+    执行代码块1;
+}
+else if (条件表达式2){
+    执行代码块2;
+}
+   ……
+else{
+    执行代码块n;
+}</code></pre><ul>
 <li>说明</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. if-else结构中的else是可选的。</span><br><span class="line">2. 如果两个条件表达式是“互斥”关系，则哪个写在上面，哪个写在下面都可以。</span><br><span class="line">   如果两个条件表达式是有交集的关系，谁上谁下是有区别的。根据题目要求看哪个应该是声明在上面。</span><br><span class="line">   如果两个条件表达式是“包含”关系，通常将范围小的声明在范围大的上面。</span><br><span class="line"></span><br><span class="line">3. 如果执行语句结构中只有一行执行语句，则执行语句所在的一对&#123;&#125;可以省略。</span><br><span class="line">   但是，不建议大家省略！</span><br></pre></td></tr></table></figure>
+<pre><code>1. if-else结构中的else是可选的。
+2. 如果两个条件表达式是“互斥”关系，则哪个写在上面，哪个写在下面都可以。
+   如果两个条件表达式是有交集的关系，谁上谁下是有区别的。根据题目要求看哪个应该是声明在上面。
+   如果两个条件表达式是“包含”关系，通常将范围小的声明在范围大的上面。
 
+3. 如果执行语句结构中只有一行执行语句，则执行语句所在的一对{}可以省略。
+   但是，不建议大家省略！</code></pre><ul>
+<li>代码演示</li>
+</ul>
+<pre><code class="java">//针对结构一：
+        int heartBeats = 80;
+        //另外：if(heartBeats &gt;= 60 &amp;&amp; heartBeats &lt;= 100) 不能写成：if(60&lt;=heartBeats&lt;=100)
+        if(heartBeats &lt; 60 || heartBeats &gt; 100){  
+            System.out.println(&quot;需要做进一步的检查&quot;);
+
+        }
+
+        System.out.println(&quot;体检结束&quot;);
+
+        //针对结构二：
+        int age = 20;
+        if(age &lt; 18){
+            System.out.println(&quot;还未成年，可以多看看动画片&quot;);
+        }else{
+            System.out.println(&quot;可以看看动作片、战争片、...&quot;);
+        }
+
+        //针对结构三：
+        age = 150;
+        if(age &lt; 0){
+            System.out.println(&quot;数据输入有误&quot;);
+        }else if(age &lt; 6){
+            System.out.println(&quot;婴幼儿时期&quot;);
+        }else if(age &lt; 13){
+            System.out.println(&quot;少年时期&quot;);
+        }else if(age &lt; 35){
+            System.out.println(&quot;青壮年时期&quot;);
+        }else if(age &lt; 55){
+            System.out.println(&quot;中年时期&quot;);
+        }else if(age &lt; 140){
+            System.out.println(&quot;老年时期&quot;);
+        }else{
+            System.out.println(&quot;恭喜你，成仙儿了~&quot;);
+        }</code></pre>
 <ul>
 <li>代码演示</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//针对结构一：</span></span><br><span class="line">		<span class="keyword">int</span> heartBeats = <span class="number">80</span>;</span><br><span class="line">		<span class="comment">//另外：if(heartBeats &gt;= 60 &amp;&amp; heartBeats &lt;= 100) 不能写成：if(60&lt;=heartBeats&lt;=100)</span></span><br><span class="line">		<span class="keyword">if</span>(heartBeats &lt; <span class="number">60</span> || heartBeats &gt; <span class="number">100</span>)&#123;  </span><br><span class="line">			System.out.println(<span class="string">"需要做进一步的检查"</span>);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"体检结束"</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//针对结构二：</span></span><br><span class="line">		<span class="keyword">int</span> age = <span class="number">20</span>;</span><br><span class="line">		<span class="keyword">if</span>(age &lt; <span class="number">18</span>)&#123;</span><br><span class="line">			System.out.println(<span class="string">"还未成年，可以多看看动画片"</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"可以看看动作片、战争片、..."</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//针对结构三：</span></span><br><span class="line">		age = <span class="number">150</span>;</span><br><span class="line">		<span class="keyword">if</span>(age &lt; <span class="number">0</span>)&#123;</span><br><span class="line">			System.out.println(<span class="string">"数据输入有误"</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(age &lt; <span class="number">6</span>)&#123;</span><br><span class="line">			System.out.println(<span class="string">"婴幼儿时期"</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(age &lt; <span class="number">13</span>)&#123;</span><br><span class="line">			System.out.println(<span class="string">"少年时期"</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(age &lt; <span class="number">35</span>)&#123;</span><br><span class="line">			System.out.println(<span class="string">"青壮年时期"</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(age &lt; <span class="number">55</span>)&#123;</span><br><span class="line">			System.out.println(<span class="string">"中年时期"</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(age &lt; <span class="number">140</span>)&#123;</span><br><span class="line">			System.out.println(<span class="string">"老年时期"</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"恭喜你，成仙儿了~"</span>);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">class IfTest1 {
+    public static void main(String[] args) {
+        //1. 从键盘获取岳小鹏的期末成绩
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(&quot;请输入岳小鹏的期末成绩(0-100)：&quot;);
+        int score = scanner.nextInt();
 
+        //2. 根据成绩做if-else判断
+        if(score == 100){
+            System.out.println(&quot;奖励一辆BMW&quot;);
+            System.out.println(&quot;奖励一辆BMW&quot;);
+        }else if(score &gt; 80 &amp;&amp; score &lt;= 99){
+            System.out.println(&quot;奖励一台iphone xs max&quot;);
+        }else if(score &gt;= 60 &amp;&amp; score &lt;= 80){
+            System.out.println(&quot;奖励一个 iPad&quot;);
+        }else{
+            System.out.println(&quot;什么奖励也没有&quot;);
+        }
+
+    }
+}</code></pre>
 <ul>
 <li>代码演示</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IfTest1</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//1. 从键盘获取岳小鹏的期末成绩</span></span><br><span class="line">		Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		System.out.println(<span class="string">"请输入岳小鹏的期末成绩(0-100)："</span>);</span><br><span class="line">		<span class="keyword">int</span> score = scanner.nextInt();</span><br><span class="line"></span><br><span class="line">		<span class="comment">//2. 根据成绩做if-else判断</span></span><br><span class="line">		<span class="keyword">if</span>(score == <span class="number">100</span>)&#123;</span><br><span class="line">			System.out.println(<span class="string">"奖励一辆BMW"</span>);</span><br><span class="line">			System.out.println(<span class="string">"奖励一辆BMW"</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(score &gt; <span class="number">80</span> &amp;&amp; score &lt;= <span class="number">99</span>)&#123;</span><br><span class="line">			System.out.println(<span class="string">"奖励一台iphone xs max"</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(score &gt;= <span class="number">60</span> &amp;&amp; score &lt;= <span class="number">80</span>)&#123;</span><br><span class="line">			System.out.println(<span class="string">"奖励一个 iPad"</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"什么奖励也没有"</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">/*
+大家都知道，男大当婚，女大当嫁。那么女方家长要嫁女儿，当然要提出一定的条件：
+高：180cm以上；富：财富1千万以上；帅：是。
+如果这三个条件同时满足，则：“我一定要嫁给他!!!”
+如果三个条件有为真的情况，则：“嫁吧，比上不足，比下有余。”
+如果三个条件都不满足，则：“不嫁！”
 
-<ul>
-<li>代码演示</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">大家都知道，男大当婚，女大当嫁。那么女方家长要嫁女儿，当然要提出一定的条件：</span></span><br><span class="line"><span class="comment">高：180cm以上；富：财富1千万以上；帅：是。</span></span><br><span class="line"><span class="comment">如果这三个条件同时满足，则：“我一定要嫁给他!!!”</span></span><br><span class="line"><span class="comment">如果三个条件有为真的情况，则：“嫁吧，比上不足，比下有余。”</span></span><br><span class="line"><span class="comment">如果三个条件都不满足，则：“不嫁！”</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IfTest3</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"请输入你的身高(cm):"</span>);</span><br><span class="line">		<span class="keyword">int</span> height = scan.nextInt();</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"请输入你的财富值(单位：万):"</span>);</span><br><span class="line">		<span class="keyword">double</span> wealth = scan.nextDouble();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		方式一：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">		System.out.println("请告诉我你是否帅？(true/false):");</span></span><br><span class="line"><span class="comment">		boolean isHandsome = scan.nextBoolean();</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">		if(height &gt; 180 &amp;&amp; wealth &gt; 1000 &amp;&amp; isHandsome)&#123;</span></span><br><span class="line"><span class="comment">			System.out.println("我一定要嫁给他!!!");</span></span><br><span class="line"><span class="comment">			</span></span><br><span class="line"><span class="comment">		&#125;else if(height &gt; 180 || wealth &gt; 1000 || isHandsome)&#123;</span></span><br><span class="line"><span class="comment">			System.out.println("嫁吧，比上不足，比下有余。");</span></span><br><span class="line"><span class="comment">		&#125;else&#123;</span></span><br><span class="line"><span class="comment">			System.out.println("不嫁！");</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">		*/</span></span><br><span class="line">		System.out.println(<span class="string">"请告诉我你是否帅？(是/否):"</span>);</span><br><span class="line">		String isHandsome = scan.next();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span>(height &gt; <span class="number">180</span> &amp;&amp; wealth &gt; <span class="number">1000</span> &amp;&amp; <span class="string">"是"</span>.equals(isHandsome))&#123;</span><br><span class="line">			System.out.println(<span class="string">"我一定要嫁给他!!!"</span>);</span><br><span class="line">			</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(height &gt; <span class="number">180</span> || wealth &gt; <span class="number">1000</span> || <span class="string">"是"</span>.equals(isHandsome))&#123;</span><br><span class="line">			System.out.println(<span class="string">"嫁吧，比上不足，比下有余。"</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"不嫁！"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+*/
+import java.util.Scanner;
+class IfTest3 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println(&quot;请输入你的身高(cm):&quot;);
+        int height = scan.nextInt();
+
+        System.out.println(&quot;请输入你的财富值(单位：万):&quot;);
+        double wealth = scan.nextDouble();
+
+        /*
+        方式一：
+
+        System.out.println(&quot;请告诉我你是否帅？(true/false):&quot;);
+        boolean isHandsome = scan.nextBoolean();
+
+        if(height &gt; 180 &amp;&amp; wealth &gt; 1000 &amp;&amp; isHandsome){
+            System.out.println(&quot;我一定要嫁给他!!!&quot;);
+
+        }else if(height &gt; 180 || wealth &gt; 1000 || isHandsome){
+            System.out.println(&quot;嫁吧，比上不足，比下有余。&quot;);
+        }else{
+            System.out.println(&quot;不嫁！&quot;);
+        }
+
+        */
+        System.out.println(&quot;请告诉我你是否帅？(是/否):&quot;);
+        String isHandsome = scan.next();
+
+        if(height &gt; 180 &amp;&amp; wealth &gt; 1000 &amp;&amp; &quot;是&quot;.equals(isHandsome)){
+            System.out.println(&quot;我一定要嫁给他!!!&quot;);
+
+        }else if(height &gt; 180 || wealth &gt; 1000 || &quot;是&quot;.equals(isHandsome)){
+            System.out.println(&quot;嫁吧，比上不足，比下有余。&quot;);
+        }else{
+            System.out.println(&quot;不嫁！&quot;);
+        }
+    }
+}
+</code></pre>
+<h3 id="3-Scanner的使用"><a href="#3-Scanner的使用" class="headerlink" title="3. Scanner的使用"></a>3. Scanner的使用</h3><pre><code class="java">//1.
+import java.util.Scanner;
+/*
+需求：如何从控制台获取常见数据类型的变量
+
+实现：使用Scanner类及其方法即可。
+
+步骤：
+1. 导包： import java.util.Scanner;
+2. 在main方法中创建Scanner的实例： Scanner scan = new Scanner(System.in);
+3. 调用Scanner的相关方法，获取不同类型的变量: next() \ nextInt() \ nextBoolean() \ ....
 
 
+说明：
+如果要求输入的类型与用户实际输入的类型不匹配的话，报异常：InputMismatchException
+*/
 
-<h3 id="3-Scanner的使用"><a href="#3-Scanner的使用" class="headerlink" title="3. Scanner的使用"></a>3. Scanner的使用</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.</span></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">需求：如何从控制台获取常见数据类型的变量</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">实现：使用Scanner类及其方法即可。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">步骤：</span></span><br><span class="line"><span class="comment">1. 导包： import java.util.Scanner;</span></span><br><span class="line"><span class="comment">2. 在main方法中创建Scanner的实例： Scanner scan = new Scanner(System.in);</span></span><br><span class="line"><span class="comment">3. 调用Scanner的相关方法，获取不同类型的变量: next() \ nextInt() \ nextBoolean() \ ....</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">说明：</span></span><br><span class="line"><span class="comment">如果要求输入的类型与用户实际输入的类型不匹配的话，报异常：InputMismatchException</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ScannerTest</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//2.</span></span><br><span class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="comment">//3.</span></span><br><span class="line">		<span class="comment">//3.1 获取String类型的变量</span></span><br><span class="line">		System.out.println(<span class="string">"请输入你的姓名："</span>);</span><br><span class="line">		String name = scan.next();</span><br><span class="line">		System.out.println(<span class="string">"名字为："</span> + name);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//3.2 获取整型int型的变量</span></span><br><span class="line">		<span class="comment">//获取其他整型：nextByte() / nextShort() / nextLong()</span></span><br><span class="line">		System.out.println(<span class="string">"请输入你的年龄："</span>);</span><br><span class="line">		<span class="keyword">int</span> age = scan.nextInt();</span><br><span class="line">		System.out.println(<span class="string">"年龄为："</span> + age);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//3.3 获取浮点型double型的变量</span></span><br><span class="line">		<span class="comment">//获取其他浮点型：nextFloat()</span></span><br><span class="line">		System.out.println(<span class="string">"请输入你的体重："</span>);</span><br><span class="line">		<span class="keyword">double</span> weight = scan.nextDouble();</span><br><span class="line">		System.out.println(<span class="string">"体重为："</span> + weight);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//3.4 获取boolean类型的变量</span></span><br><span class="line">		System.out.println(<span class="string">"请输入你是否已婚(true/false)："</span>);</span><br><span class="line">		<span class="keyword">boolean</span> isMarried = scan.nextBoolean();</span><br><span class="line">		System.out.println(<span class="string">"是否已婚："</span> + isMarried);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//3.5 获取char类型的变量</span></span><br><span class="line">		System.out.println(<span class="string">"请输入你的性别(男/女)："</span>);</span><br><span class="line">		String gender = scan.next();<span class="comment">//"男"</span></span><br><span class="line">		<span class="keyword">char</span> charGender = gender.charAt(<span class="number">0</span>);<span class="comment">//charAt(index):获取index位置的字符</span></span><br><span class="line">		System.out.println(<span class="string">"性别为："</span> + charGender);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+class ScannerTest {
+    public static void main(String[] args) {
+        //2.
+        Scanner scan = new Scanner(System.in);
+        //3.
+        //3.1 获取String类型的变量
+        System.out.println(&quot;请输入你的姓名：&quot;);
+        String name = scan.next();
+        System.out.println(&quot;名字为：&quot; + name);
 
-<h3 id="4-获取随机数"><a href="#4-获取随机数" class="headerlink" title="4. 获取随机数"></a>4. 获取随机数</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomTest</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//random():返回一个&gt;= 0.0 且 &lt; 1.0的double型值</span></span><br><span class="line">		<span class="keyword">double</span> value = Math.random();</span><br><span class="line">		System.out.println(value);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//获取[0,100]范围内的随机数：</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">int</span> score = (<span class="keyword">int</span>)(Math.random() * <span class="number">101</span>);  <span class="comment">//[0,1) -&gt; [0,101) -&gt; [0,100]</span></span><br><span class="line">		System.out.println(score);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//获取[10,30]范围内的随机数：</span></span><br><span class="line">		<span class="keyword">int</span> value1 = (<span class="keyword">int</span>)(Math.random() * <span class="number">21</span>  + <span class="number">10</span>);   <span class="comment">// [0,1) -&gt; [0,21) -&gt; [10,31)  -&gt;[10,30]</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//获取[a,b]范围内的随机数：(int)(Math.random() * (b - a + 1) + a)</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        //3.2 获取整型int型的变量
+        //获取其他整型：nextByte() / nextShort() / nextLong()
+        System.out.println(&quot;请输入你的年龄：&quot;);
+        int age = scan.nextInt();
+        System.out.println(&quot;年龄为：&quot; + age);
 
+        //3.3 获取浮点型double型的变量
+        //获取其他浮点型：nextFloat()
+        System.out.println(&quot;请输入你的体重：&quot;);
+        double weight = scan.nextDouble();
+        System.out.println(&quot;体重为：&quot; + weight);
 
+        //3.4 获取boolean类型的变量
+        System.out.println(&quot;请输入你是否已婚(true/false)：&quot;);
+        boolean isMarried = scan.nextBoolean();
+        System.out.println(&quot;是否已婚：&quot; + isMarried);
 
+        //3.5 获取char类型的变量
+        System.out.println(&quot;请输入你的性别(男/女)：&quot;);
+        String gender = scan.next();//&quot;男&quot;
+        char charGender = gender.charAt(0);//charAt(index):获取index位置的字符
+        System.out.println(&quot;性别为：&quot; + charGender);
+
+    }
+}
+</code></pre>
+<h3 id="4-获取随机数"><a href="#4-获取随机数" class="headerlink" title="4. 获取随机数"></a>4. 获取随机数</h3><pre><code class="java">class RandomTest {
+    public static void main(String[] args) {
+        //random():返回一个&gt;= 0.0 且 &lt; 1.0的double型值
+        double value = Math.random();
+        System.out.println(value);
+
+        //获取[0,100]范围内的随机数：
+
+        int score = (int)(Math.random() * 101);  //[0,1) -&gt; [0,101) -&gt; [0,100]
+        System.out.println(score);
+
+        //获取[10,30]范围内的随机数：
+        int value1 = (int)(Math.random() * 21  + 10);   // [0,1) -&gt; [0,21) -&gt; [10,31)  -&gt;[10,30]
+
+        //获取[a,b]范围内的随机数：(int)(Math.random() * (b - a + 1) + a)
+    }
+}
+</code></pre>
 <h3 id="5-switch-case结构"><a href="#5-switch-case结构" class="headerlink" title="5. switch-case结构"></a>5. switch-case结构</h3><ul>
 <li>结构</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">switch(表达式)&#123;</span><br><span class="line">case 常量1:</span><br><span class="line">	语句1;</span><br><span class="line">	&#x2F;&#x2F; break;</span><br><span class="line">case 常量2:</span><br><span class="line">	语句2;</span><br><span class="line">	&#x2F;&#x2F; break;</span><br><span class="line">… …</span><br><span class="line">case 常量N:</span><br><span class="line">	语句N;</span><br><span class="line">	&#x2F;&#x2F; break;</span><br><span class="line">default:</span><br><span class="line">	语句;</span><br><span class="line">	&#x2F;&#x2F; break;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>switch(表达式){
+case 常量1:
+    语句1;
+    // break;
+case 常量2:
+    语句2;
+    // break;
+… …
+case 常量N:
+    语句N;
+    // break;
+default:
+    语句;
+    // break;
+} 
+</code></pre><ul>
 <li>说明</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">① switch中的表达式，可以是如下的一些数据类型：byte \ short \ char \ int \ 枚举类型(JDK5.0) \ String (JDK7.0)</span><br><span class="line">② 根据switch中的表达式的值，依次匹配case中的常量。一旦匹配成功，则进入相应的case的执行语句中执行。并考虑执行后续</span><br><span class="line">的case结构。直到遇到break或switch-case结构执行结束为止。</span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">③ switch-case要想实现多选一的效果，需要使用break。</span><br><span class="line">③ default 相当于if-else中的else结构。是可选的，位置也是灵活的</span><br><span class="line"></span><br><span class="line">④ switch-case 实现的结构都可以转换为if-else。反之，不成立。</span><br><span class="line">凡是既可以使用switch-case，又可以使用if-else结构的地方，建议使用switch-case。因为执行效率高一些。</span><br></pre></td></tr></table></figure>
+<pre><code>① switch中的表达式，可以是如下的一些数据类型：byte \ short \ char \ int \ 枚举类型(JDK5.0) \ String (JDK7.0)
+② 根据switch中的表达式的值，依次匹配case中的常量。一旦匹配成功，则进入相应的case的执行语句中执行。并考虑执行后续
+的case结构。直到遇到break或switch-case结构执行结束为止。
+或
 
-<ul>
+③ switch-case要想实现多选一的效果，需要使用break。
+③ default 相当于if-else中的else结构。是可选的，位置也是灵活的
+
+④ switch-case 实现的结构都可以转换为if-else。反之，不成立。
+凡是既可以使用switch-case，又可以使用if-else结构的地方，建议使用switch-case。因为执行效率高一些。</code></pre><ul>
 <li>代码演示</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SwitchTest</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> num = <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">switch</span>(num)&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">			System.out.println(<span class="string">"Zero"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">			System.out.println(<span class="string">"One"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">			System.out.println(<span class="string">"Two"</span>);</span><br><span class="line">			<span class="keyword">break</span>;<span class="comment">//跳出当前的switch-case结构</span></span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">			System.out.println(<span class="string">"Three"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">			System.out.println(<span class="string">"Four"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			System.out.println(<span class="string">"Other"</span>);</span><br><span class="line">			<span class="comment">//break;</span></span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//##########################</span></span><br><span class="line">		String season = <span class="string">"summer1"</span>;</span><br><span class="line">		<span class="keyword">switch</span> (season) &#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">case</span> <span class="string">"spring"</span>:</span><br><span class="line">			System.out.println(<span class="string">"春暖花开"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">"summer"</span>:</span><br><span class="line">			System.out.println(<span class="string">"夏日炎炎"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">"autumn"</span>:</span><br><span class="line">			System.out.println(<span class="string">"秋高气爽"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">"winter"</span>:</span><br><span class="line">			System.out.println(<span class="string">"冬雪皑皑"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			System.out.println(<span class="string">"季节输入有误"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">class SwitchTest {
+    public static void main(String[] args) {
+        int num = 2;
+        switch(num){
 
-<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Exer</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">int</span> b = <span class="number">35</span>;</span><br><span class="line">		<span class="keyword">int</span> c = <span class="number">45</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">int</span> max;</span><br><span class="line">		<span class="keyword">if</span>(a &gt;= b)&#123;</span><br><span class="line">			<span class="keyword">if</span>(a &gt;= c)&#123;</span><br><span class="line">				max = a;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				max = c;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(b &gt;= c)&#123;</span><br><span class="line">				max = b;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				max = c;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(max);</span><br><span class="line">		<span class="comment">//#####################</span></span><br><span class="line">		<span class="keyword">int</span> max1;</span><br><span class="line">		<span class="keyword">if</span>(a &gt;= b &amp;&amp; a &gt;= c)&#123;</span><br><span class="line">			max1 = a;</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(b &gt;= a &amp;&amp; b &gt;= c)&#123;</span><br><span class="line">			max1 = b;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			max1 = c;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        case 0:
+            System.out.println(&quot;Zero&quot;);
+            break;
+        case 1:
+            System.out.println(&quot;One&quot;);
+            break;
+        case 2:
+            System.out.println(&quot;Two&quot;);
+            break;//跳出当前的switch-case结构
+        case 3:
+            System.out.println(&quot;Three&quot;);
+            break;
+        case 4:
+            System.out.println(&quot;Four&quot;);
+            break;
+        default:
+            System.out.println(&quot;Other&quot;);
+            //break;
+        }
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">编写程序：由键盘输入三个整数分别存入变量num1、num2、num3，对它们进行排序(使用 if-else if-else),并且从小到大输出。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Exer1</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"请输入第一个整数num1："</span>);</span><br><span class="line">		<span class="keyword">int</span> num1 = scan.nextInt();</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"请输入第二个整数num2："</span>);</span><br><span class="line">		<span class="keyword">int</span> num2 = scan.nextInt();</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"请输入第三个整数num3："</span>);</span><br><span class="line">		<span class="keyword">int</span> num3 = scan.nextInt();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span>(num1 &gt;= num2 &amp;&amp; num1 &gt;= num3)&#123;</span><br><span class="line">			<span class="keyword">if</span>(num2 &gt; num3)&#123;</span><br><span class="line">				System.out.println(<span class="string">"从小到大排列为"</span> + num3 +<span class="string">"-"</span> + num2 + <span class="string">"-"</span> + num1);</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				System.out.println(<span class="string">"从小到大排列为"</span> + num2 + <span class="string">"-"</span> + num3 + <span class="string">"-"</span> + num1);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(num1 &lt;= num2 &amp;&amp; num3 &lt;= num2)&#123;</span><br><span class="line">			<span class="keyword">if</span>(num1 &gt; num3)&#123;</span><br><span class="line">				System.out.println(<span class="string">"从小到大排列为"</span> + num3 + <span class="string">"-"</span> + num1 + <span class="string">"-"</span> + num2);</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				System.out.println(<span class="string">"从小到大排列为"</span> + num1 + <span class="string">"-"</span> + num3 + <span class="string">"-"</span> + num2);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(num3 &gt;= num1 &amp;&amp; num3 &gt;= num2)&#123;</span><br><span class="line">			<span class="keyword">if</span>(num1 &gt; num2)&#123;</span><br><span class="line">				System.out.println(<span class="string">"从小到大排列为"</span> + num2 + <span class="string">"-"</span> + num1 + <span class="string">"-"</span> + num3);</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				System.out.println(<span class="string">"从小到大排列为"</span> + num1 + <span class="string">"-"</span> + num2 + <span class="string">"-"</span> + num3);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//#####################</span></span><br><span class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		System.out.println(<span class="string">"请输入第一个数字"</span>);</span><br><span class="line">		<span class="keyword">int</span> num1 = scan.nextInt();</span><br><span class="line">		System.out.println(<span class="string">"请输入第二个数字"</span>);</span><br><span class="line">		<span class="keyword">int</span> num2 = scan.nextInt();</span><br><span class="line">		System.out.println(<span class="string">"请输入第三个数字"</span>);</span><br><span class="line">		<span class="keyword">int</span> num3 = scan.nextInt();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span>(num1 &gt; num2)&#123;</span><br><span class="line">			temp = num2;</span><br><span class="line">			num2 = num1;</span><br><span class="line">			num1 = temp;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(num1 &gt; num3)&#123;</span><br><span class="line">			temp = num3;</span><br><span class="line">			num3 = num1;</span><br><span class="line">			num1 = temp;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(num2 &gt; num3)&#123;</span><br><span class="line">			temp = num3;</span><br><span class="line">			num3 = num2;</span><br><span class="line">			num2 = temp;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"从小到大输出："</span> + num1 + <span class="string">" "</span>+ num2 + <span class="string">" "</span> + num3);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//########推荐#############</span></span><br><span class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		System.out.println(<span class="string">"请输入三个整数："</span>);</span><br><span class="line">		<span class="keyword">int</span> num1 = scan.nextInt();</span><br><span class="line">		<span class="keyword">int</span> num2 = scan.nextInt();</span><br><span class="line">		<span class="keyword">int</span> num3 = scan.nextInt();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span>(num1 &gt; num2 )&#123;</span><br><span class="line">			<span class="keyword">if</span>(num2 &gt; num3)&#123;</span><br><span class="line">				System.out.println(num1 + <span class="string">","</span> + num2 + <span class="string">"和"</span> + num3 +<span class="string">"的从小到大的顺序为："</span> + num3 + <span class="string">","</span> + num2 + <span class="string">","</span> + num1);</span><br><span class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(num3 &gt; num1)&#123;</span><br><span class="line">				System.out.println(num1 + <span class="string">","</span> + num2 + <span class="string">"和"</span> + num3 +<span class="string">"的从小到大的顺序为："</span> + num2 + <span class="string">","</span> + num1 + <span class="string">","</span> + num3);</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				System.out.println(num1 + <span class="string">","</span> + num2 + <span class="string">"和"</span> + num3 +<span class="string">"的从小到大的顺序为："</span> + num2 + <span class="string">","</span> + num3 + <span class="string">","</span> + num1);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(num2 &lt; num3)&#123;</span><br><span class="line">				System.out.println(num1 + <span class="string">","</span> + num2 + <span class="string">"和"</span> + num3 +<span class="string">"的从小到大的顺序为："</span> + num1 + <span class="string">","</span> + num2 + <span class="string">","</span> + num3);</span><br><span class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(num3 &lt; num1)&#123;</span><br><span class="line">				System.out.println(num1 + <span class="string">","</span> + num2 + <span class="string">"和"</span> + num3 +<span class="string">"的从小到大的顺序为："</span> + num3 + <span class="string">","</span> + num1 + <span class="string">","</span> + num2);</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				System.out.println(num1 + <span class="string">","</span> + num2 + <span class="string">"和"</span> + num3 +<span class="string">"的从小到大的顺序为："</span> + num1 + <span class="string">","</span> + num3 + <span class="string">","</span> + num2);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        //##########################
+        String season = &quot;summer1&quot;;
+        switch (season) {
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">编写程序：从键盘上输入2020年的“month”和“day”，要求通过程序输出输入的日期为2020年的第几天。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">说明：在switch-case结构中不一定使用break。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Exer2</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		System.out.println(<span class="string">"请输入月份：（1-12）"</span>);</span><br><span class="line">        <span class="keyword">int</span> month = scan.nextInt();</span><br><span class="line">		System.out.println(<span class="string">"请输入日：（1-31）"</span>);</span><br><span class="line">		<span class="keyword">int</span> day = scan.nextInt();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> sumDays = <span class="number">0</span>;<span class="comment">//记录总天数</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">switch</span> (month)&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">12</span>:</span><br><span class="line">			sumDays +=<span class="number">30</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">11</span>:</span><br><span class="line">			sumDays +=<span class="number">31</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">			sumDays +=<span class="number">30</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">			sumDays +=<span class="number">31</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">			sumDays +=<span class="number">31</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">			sumDays +=<span class="number">30</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">			sumDays +=<span class="number">31</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">			sumDays +=<span class="number">30</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">			sumDays +=<span class="number">31</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">			sumDays +=<span class="number">29</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">			sumDays +=<span class="number">31</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">			sumDays += day;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        case &quot;spring&quot;:
+            System.out.println(&quot;春暖花开&quot;);
+            break;
+        case &quot;summer&quot;:
+            System.out.println(&quot;夏日炎炎&quot;);
+            break;
+        case &quot;autumn&quot;:
+            System.out.println(&quot;秋高气爽&quot;);
+            break;
+        case &quot;winter&quot;:
+            System.out.println(&quot;冬雪皑皑&quot;);
+            break;
+        default:
+            System.out.println(&quot;季节输入有误&quot;);
+            break;
+        }
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">拓展1：见Exer3.java</span></span><br><span class="line"><span class="comment">已知2020年1月1日是星期三，从键盘输入2020年的任意一天，请判断它是星期几</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Exer3</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		System.out.println(<span class="string">"请输入月份：（1-12）"</span>);</span><br><span class="line">        <span class="keyword">int</span> month = scan.nextInt();</span><br><span class="line">		System.out.println(<span class="string">"请输入日：（1-31）"</span>);</span><br><span class="line">		<span class="keyword">int</span> day = scan.nextInt();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> sumDays = <span class="number">0</span>;<span class="comment">//记录总天数</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">switch</span> (month)&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">12</span>:</span><br><span class="line">			sumDays +=<span class="number">30</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">11</span>:</span><br><span class="line">			sumDays +=<span class="number">31</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">			sumDays +=<span class="number">30</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">			sumDays +=<span class="number">31</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">			sumDays +=<span class="number">31</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">			sumDays +=<span class="number">30</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">			sumDays +=<span class="number">31</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">			sumDays +=<span class="number">30</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">			sumDays +=<span class="number">31</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">			sumDays +=<span class="number">29</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">			sumDays +=<span class="number">31</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">			sumDays += day;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		String info;</span><br><span class="line">		<span class="keyword">switch</span>(sumDays % <span class="number">7</span> )&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">			info = <span class="string">"星期二"</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">			info = <span class="string">"星期三"</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">			info = <span class="string">"星期四"</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">			info = <span class="string">"星期五"</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">			info = <span class="string">"星期六"</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">			info = <span class="string">"星期日"</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">			info = <span class="string">"星期一"</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			info = <span class="string">""</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(month + <span class="string">"月"</span> + day + <span class="string">"日是2020年的"</span> + info);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">从键盘分别输入年、月、日，判断这一天是当年的第几天</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment">   注：判断一年是否是闰年的标准：</span></span><br><span class="line"><span class="comment">       1）可以被4整除，但不可被100整除</span></span><br><span class="line"><span class="comment">	或</span></span><br><span class="line"><span class="comment">       2）可以被400整除</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SwitchCaseTest</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"请输入年份："</span>);</span><br><span class="line">		<span class="keyword">int</span> year = scan.nextInt();</span><br><span class="line">		System.out.println(<span class="string">"请输入月份：（1-12）"</span>);</span><br><span class="line">        <span class="keyword">int</span> month = scan.nextInt();</span><br><span class="line">		System.out.println(<span class="string">"请输入日：（1-31）"</span>);</span><br><span class="line">		<span class="keyword">int</span> day = scan.nextInt();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> sumDays = <span class="number">0</span>;<span class="comment">//记录总天数</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">switch</span> (month)&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">12</span>:</span><br><span class="line">			sumDays +=<span class="number">30</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">11</span>:</span><br><span class="line">			sumDays +=<span class="number">31</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">			sumDays +=<span class="number">30</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">			sumDays +=<span class="number">31</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">			sumDays +=<span class="number">31</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">			sumDays +=<span class="number">30</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">			sumDays +=<span class="number">31</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">			sumDays +=<span class="number">30</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">			sumDays +=<span class="number">31</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">			<span class="keyword">if</span>((year % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; year % <span class="number">100</span> != <span class="number">0</span>) || (year % <span class="number">400</span> == <span class="number">0</span>))&#123;<span class="comment">//判断year是否是闰年</span></span><br><span class="line">				sumDays +=<span class="number">29</span>;</span><br><span class="line">				</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				sumDays +=<span class="number">28</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//。。。。</span></span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">			sumDays +=<span class="number">31</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">			sumDays += day;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		System.out.println(year + <span class="string">"年"</span> + month + <span class="string">"月"</span> + day + <span class="string">"日是当前的第"</span> + sumDays + <span class="string">"天"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    }
+}</code></pre>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><pre><code class="java">class Exer{
 
+    public static void main(String[] args){
+        int a = 10;
+        int b = 35;
+        int c = 45;
+
+        int max;
+        if(a &gt;= b){
+            if(a &gt;= c){
+                max = a;
+            }else{
+                max = c;
+            }
+
+        }else{
+            if(b &gt;= c){
+                max = b;
+            }else{
+                max = c;
+            }
+        }
+        System.out.println(max);
+        //#####################
+        int max1;
+        if(a &gt;= b &amp;&amp; a &gt;= c){
+            max1 = a;
+        }else if(b &gt;= a &amp;&amp; b &gt;= c){
+            max1 = b;
+        }else{
+            max1 = c;
+        }
+    }
+
+}</code></pre>
+<pre><code class="java">/*
+编写程序：由键盘输入三个整数分别存入变量num1、num2、num3，对它们进行排序(使用 if-else if-else),并且从小到大输出。
+*/
+import java.util.Scanner;
+class Exer1 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println(&quot;请输入第一个整数num1：&quot;);
+        int num1 = scan.nextInt();
+
+        System.out.println(&quot;请输入第二个整数num2：&quot;);
+        int num2 = scan.nextInt();
+
+        System.out.println(&quot;请输入第三个整数num3：&quot;);
+        int num3 = scan.nextInt();
+
+
+        if(num1 &gt;= num2 &amp;&amp; num1 &gt;= num3){
+            if(num2 &gt; num3){
+                System.out.println(&quot;从小到大排列为&quot; + num3 +&quot;-&quot; + num2 + &quot;-&quot; + num1);
+            }else{
+                System.out.println(&quot;从小到大排列为&quot; + num2 + &quot;-&quot; + num3 + &quot;-&quot; + num1);
+            }
+        }else if(num1 &lt;= num2 &amp;&amp; num3 &lt;= num2){
+            if(num1 &gt; num3){
+                System.out.println(&quot;从小到大排列为&quot; + num3 + &quot;-&quot; + num1 + &quot;-&quot; + num2);
+            }else{
+                System.out.println(&quot;从小到大排列为&quot; + num1 + &quot;-&quot; + num3 + &quot;-&quot; + num2);
+            }
+        }else if(num3 &gt;= num1 &amp;&amp; num3 &gt;= num2){
+            if(num1 &gt; num2){
+                System.out.println(&quot;从小到大排列为&quot; + num2 + &quot;-&quot; + num1 + &quot;-&quot; + num3);
+            }else{
+                System.out.println(&quot;从小到大排列为&quot; + num1 + &quot;-&quot; + num2 + &quot;-&quot; + num3);
+            }
+        }
+
+        //#####################
+        Scanner scan = new Scanner(System.in);
+        System.out.println(&quot;请输入第一个数字&quot;);
+        int num1 = scan.nextInt();
+        System.out.println(&quot;请输入第二个数字&quot;);
+        int num2 = scan.nextInt();
+        System.out.println(&quot;请输入第三个数字&quot;);
+        int num3 = scan.nextInt();
+
+
+        int temp = 0;
+        if(num1 &gt; num2){
+            temp = num2;
+            num2 = num1;
+            num1 = temp;
+        }
+        if(num1 &gt; num3){
+            temp = num3;
+            num3 = num1;
+            num1 = temp;
+        }
+        if(num2 &gt; num3){
+            temp = num3;
+            num3 = num2;
+            num2 = temp;
+        }
+        System.out.println(&quot;从小到大输出：&quot; + num1 + &quot; &quot;+ num2 + &quot; &quot; + num3);
+
+        //########推荐#############
+        Scanner scan = new Scanner(System.in);
+        System.out.println(&quot;请输入三个整数：&quot;);
+        int num1 = scan.nextInt();
+        int num2 = scan.nextInt();
+        int num3 = scan.nextInt();
+
+        if(num1 &gt; num2 ){
+            if(num2 &gt; num3){
+                System.out.println(num1 + &quot;,&quot; + num2 + &quot;和&quot; + num3 +&quot;的从小到大的顺序为：&quot; + num3 + &quot;,&quot; + num2 + &quot;,&quot; + num1);
+            }else if(num3 &gt; num1){
+                System.out.println(num1 + &quot;,&quot; + num2 + &quot;和&quot; + num3 +&quot;的从小到大的顺序为：&quot; + num2 + &quot;,&quot; + num1 + &quot;,&quot; + num3);
+            }else{
+                System.out.println(num1 + &quot;,&quot; + num2 + &quot;和&quot; + num3 +&quot;的从小到大的顺序为：&quot; + num2 + &quot;,&quot; + num3 + &quot;,&quot; + num1);
+            }
+        }else{
+            if(num2 &lt; num3){
+                System.out.println(num1 + &quot;,&quot; + num2 + &quot;和&quot; + num3 +&quot;的从小到大的顺序为：&quot; + num1 + &quot;,&quot; + num2 + &quot;,&quot; + num3);
+            }else if(num3 &lt; num1){
+                System.out.println(num1 + &quot;,&quot; + num2 + &quot;和&quot; + num3 +&quot;的从小到大的顺序为：&quot; + num3 + &quot;,&quot; + num1 + &quot;,&quot; + num2);
+            }else{
+                System.out.println(num1 + &quot;,&quot; + num2 + &quot;和&quot; + num3 +&quot;的从小到大的顺序为：&quot; + num1 + &quot;,&quot; + num3 + &quot;,&quot; + num2);
+            }
+        }
+    }
+
+}
+</code></pre>
+<pre><code class="java">/*
+编写程序：从键盘上输入2020年的“month”和“day”，要求通过程序输出输入的日期为2020年的第几天。
+
+说明：在switch-case结构中不一定使用break。
+
+
+*/
+import java.util.Scanner;
+class Exer2 {
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println(&quot;请输入月份：（1-12）&quot;);
+        int month = scan.nextInt();
+        System.out.println(&quot;请输入日：（1-31）&quot;);
+        int day = scan.nextInt();
+
+        int sumDays = 0;//记录总天数
+
+        switch (month){
+        case 12:
+            sumDays +=30;
+        case 11:
+            sumDays +=31;
+        case 10:
+            sumDays +=30;
+        case 9:
+            sumDays +=31;
+        case 8:
+            sumDays +=31;
+        case 7:
+            sumDays +=30;
+        case 6:
+            sumDays +=31;
+        case 5:
+            sumDays +=30;
+        case 4:
+            sumDays +=31;
+        case 3:
+            sumDays +=29;
+        case 2:
+            sumDays +=31;
+        case 1:
+            sumDays += day;
+        }
+
+
+
+    }
+}
+</code></pre>
+<pre><code class="java">/*
+拓展1：见Exer3.java
+已知2020年1月1日是星期三，从键盘输入2020年的任意一天，请判断它是星期几
+*/
+import java.util.Scanner;
+class Exer3 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println(&quot;请输入月份：（1-12）&quot;);
+        int month = scan.nextInt();
+        System.out.println(&quot;请输入日：（1-31）&quot;);
+        int day = scan.nextInt();
+
+        int sumDays = 0;//记录总天数
+
+        switch (month){
+        case 12:
+            sumDays +=30;
+        case 11:
+            sumDays +=31;
+        case 10:
+            sumDays +=30;
+        case 9:
+            sumDays +=31;
+        case 8:
+            sumDays +=31;
+        case 7:
+            sumDays +=30;
+        case 6:
+            sumDays +=31;
+        case 5:
+            sumDays +=30;
+        case 4:
+            sumDays +=31;
+        case 3:
+            sumDays +=29;
+        case 2:
+            sumDays +=31;
+        case 1:
+            sumDays += day;
+        }
+
+        String info;
+        switch(sumDays % 7 ){
+        case 0:
+            info = &quot;星期二&quot;;
+            break;
+        case 1:
+            info = &quot;星期三&quot;;
+            break;
+        case 2:
+            info = &quot;星期四&quot;;
+            break;
+        case 3:
+            info = &quot;星期五&quot;;
+            break;
+        case 4:
+            info = &quot;星期六&quot;;
+            break;
+        case 5:
+            info = &quot;星期日&quot;;
+            break;
+        case 6:
+            info = &quot;星期一&quot;;
+            break;
+        default:
+            info = &quot;&quot;;
+        }
+        System.out.println(month + &quot;月&quot; + day + &quot;日是2020年的&quot; + info);
+    }
+}</code></pre>
+<pre><code class="java">/*
+从键盘分别输入年、月、日，判断这一天是当年的第几天
+
+   注：判断一年是否是闰年的标准：
+       1）可以被4整除，但不可被100整除
+    或
+       2）可以被400整除
+*/
+import java.util.Scanner;
+class SwitchCaseTest {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println(&quot;请输入年份：&quot;);
+        int year = scan.nextInt();
+        System.out.println(&quot;请输入月份：（1-12）&quot;);
+        int month = scan.nextInt();
+        System.out.println(&quot;请输入日：（1-31）&quot;);
+        int day = scan.nextInt();
+
+        int sumDays = 0;//记录总天数
+
+        switch (month){
+        case 12:
+            sumDays +=30;
+        case 11:
+            sumDays +=31;
+        case 10:
+            sumDays +=30;
+        case 9:
+            sumDays +=31;
+        case 8:
+            sumDays +=31;
+        case 7:
+            sumDays +=30;
+        case 6:
+            sumDays +=31;
+        case 5:
+            sumDays +=30;
+        case 4:
+            sumDays +=31;
+        case 3:
+            if((year % 4 == 0 &amp;&amp; year % 100 != 0) || (year % 400 == 0)){//判断year是否是闰年
+                sumDays +=29;
+
+            }else{
+                sumDays +=28;
+            }
+            //。。。。
+        case 2:
+            sumDays +=31;
+        case 1:
+            sumDays += day;
+        }
+
+        System.out.println(year + &quot;年&quot; + month + &quot;月&quot; + day + &quot;日是当前的第&quot; + sumDays + &quot;天&quot;);
+    }
+}
+</code></pre>
 <ul>
 <li>switch-case中不一定要使用break</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">例题：对学生成绩大于60分的，输出“合格”。低于60分的，输出“不合格”。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SwitchCaseTest1</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> score = <span class="number">78</span>;</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		if(score &gt;= 60)&#123;</span></span><br><span class="line"><span class="comment">			System.out.println("合格");</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">		&#125;else&#123;</span></span><br><span class="line"><span class="comment">			System.out.println("不合格");</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">		*/</span></span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		</span></span><br><span class="line"><span class="comment">		switch(score)&#123;</span></span><br><span class="line"><span class="comment">		case 0:</span></span><br><span class="line"><span class="comment">			System.out.println("不合格");</span></span><br><span class="line"><span class="comment">			break;</span></span><br><span class="line"><span class="comment">		case 1:</span></span><br><span class="line"><span class="comment">			//...</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">		*/</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//方式一：</span></span><br><span class="line">		<span class="keyword">switch</span>(score / <span class="number">10</span>)&#123; <span class="comment">//0 - 10</span></span><br><span class="line">		<span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">		<span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">			System.out.println(<span class="string">"不合格"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">		<span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">		<span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">		<span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">		<span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">			System.out.println(<span class="string">"合格"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//方式二：</span></span><br><span class="line">		<span class="keyword">switch</span>(score / <span class="number">60</span>)&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">			System.out.println(<span class="string">"不合格"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">			System.out.println(<span class="string">"合格"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">/*
+例题：对学生成绩大于60分的，输出“合格”。低于60分的，输出“不合格”。
 
+
+*/
+class SwitchCaseTest1 {
+    public static void main(String[] args) {
+
+        int score = 78;
+        /*
+        if(score &gt;= 60){
+            System.out.println(&quot;合格&quot;);
+
+        }else{
+            System.out.println(&quot;不合格&quot;);
+        }
+        */
+        /*
+
+        switch(score){
+        case 0:
+            System.out.println(&quot;不合格&quot;);
+            break;
+        case 1:
+            //...
+        }
+        */
+
+        //方式一：
+        switch(score / 10){ //0 - 10
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+            System.out.println(&quot;不合格&quot;);
+            break;
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+            System.out.println(&quot;合格&quot;);
+            break;
+        }
+
+        //方式二：
+        switch(score / 60){
+        case 0:
+            System.out.println(&quot;不合格&quot;);
+            break;
+        case 1:
+            System.out.println(&quot;合格&quot;);
+            break;
+        }
+    }
+}</code></pre>
 <ul>
 <li>说明：如果多个case结构的执行语句相同，则可以考虑合并执行语句。</li>
 <li></li>
@@ -619,79 +1231,562 @@
 <li>循环结构的4个要素</li>
 </ul>
 <p><img src="/Users/mymac/Desktop/Java/2_%E6%AF%8F%E6%97%A5%E7%AC%94%E8%AE%B0/assets/1593334412406.png" alt="1593334412406"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">① 初始化条件</span><br><span class="line">② 循环条件  ---&gt;boolean类型</span><br><span class="line">③ 循环体</span><br><span class="line">④ 迭代部分</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for(①;②;④)&#123;</span><br><span class="line">	③		</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">执行过程：① - ② - ③ - ④ - ② - ③ - ④ - ② - ③ - ④ - .... - ②</span><br></pre></td></tr></table></figure>
+<pre><code>① 初始化条件
+② 循环条件  ---&gt;boolean类型
+③ 循环体
+④ 迭代部分
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ForTest</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		System.out.println("Hello World!");</span></span><br><span class="line"><span class="comment">		System.out.println("Hello World!");</span></span><br><span class="line"><span class="comment">		System.out.println("Hello World!");</span></span><br><span class="line"><span class="comment">		System.out.println("Hello World!");</span></span><br><span class="line"><span class="comment">		System.out.println("Hello World!");</span></span><br><span class="line"><span class="comment">		*/</span></span><br><span class="line">	</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">5</span>;i++)&#123;<span class="comment">//</span></span><br><span class="line">			System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//此时出了for循环结构，所以此时的i不可用。</span></span><br><span class="line">		<span class="comment">//System.out.println(i);</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//练习</span></span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(System.out.print(<span class="string">'a'</span>);i &lt;= <span class="number">3</span>;System.out.print(<span class="string">'c'</span>),i++)&#123;</span><br><span class="line">			System.out.print(<span class="string">'b'</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//输出结果：abcbcbc</span></span><br><span class="line">		System.out.println();</span><br><span class="line">		<span class="comment">//练习：遍历100以内的偶数,并计算偶数的和，偶数的个数</span></span><br><span class="line">		<span class="comment">//体会：累加的思想</span></span><br><span class="line">		<span class="keyword">int</span> sum = <span class="number">0</span>;<span class="comment">//记录偶数的和</span></span><br><span class="line">		<span class="keyword">int</span> count = <span class="number">0</span>;<span class="comment">//记录偶数的个数</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j &lt;= <span class="number">100</span>;j++)&#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(j % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">				System.out.println(j);</span><br><span class="line">				sum += j;</span><br><span class="line">				count++;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"偶数总和为："</span> + sum);</span><br><span class="line">		System.out.println(<span class="string">"偶数个数为："</span> + count);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+for(①;②;④){
+    ③        
+}
+
+执行过程：① - ② - ③ - ④ - ② - ③ - ④ - ② - ③ - ④ - .... - ②</code></pre><pre><code class="java">class ForTest {
+
+    public static void main(String[] args) {
+        /*
+        System.out.println(&quot;Hello World!&quot;);
+        System.out.println(&quot;Hello World!&quot;);
+        System.out.println(&quot;Hello World!&quot;);
+        System.out.println(&quot;Hello World!&quot;);
+        System.out.println(&quot;Hello World!&quot;);
+        */
+
+        for(int i = 1;i &lt;= 5;i++){//
+            System.out.println(&quot;Hello World!&quot;);
+        }
+        //此时出了for循环结构，所以此时的i不可用。
+        //System.out.println(i);
+
+        //练习
+        int i = 1;
+        for(System.out.print(&#39;a&#39;);i &lt;= 3;System.out.print(&#39;c&#39;),i++){
+            System.out.print(&#39;b&#39;);
+        }
+        //输出结果：abcbcbc
+        System.out.println();
+        //练习：遍历100以内的偶数,并计算偶数的和，偶数的个数
+        //体会：累加的思想
+        int sum = 0;//记录偶数的和
+        int count = 0;//记录偶数的个数
+        for(int j = 1;j &lt;= 100;j++){
+
+            if(j % 2 == 0){
+                System.out.println(j);
+                sum += j;
+                count++;
+            }
+
+        }
+        System.out.println(&quot;偶数总和为：&quot; + sum);
+        System.out.println(&quot;偶数个数为：&quot; + count);
+    }
+}</code></pre>
 <ul>
 <li>练习1</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">编写程序从1循环到150，并在每行打印一个值，另外在每个3的倍数行上打印出“foo”,</span></span><br><span class="line"><span class="comment">在每个5的倍数行上打印“biz”,在每个7的倍数行上打印输出“baz”。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ForTest1</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">150</span>;i++)&#123;</span><br><span class="line">			System.out.print(i + <span class="string">" "</span>);</span><br><span class="line">			<span class="keyword">if</span>(i % <span class="number">3</span> == <span class="number">0</span>)&#123;</span><br><span class="line">				System.out.print(<span class="string">"foo "</span>);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span>(i % <span class="number">5</span> == <span class="number">0</span>)&#123;</span><br><span class="line">				System.out.print(<span class="string">"biz "</span>);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span>(i % <span class="number">7</span> == <span class="number">0</span>)&#123;</span><br><span class="line">				</span><br><span class="line">				System.out.print(<span class="string">"baz "</span>);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">/*
+编写程序从1循环到150，并在每行打印一个值，另外在每个3的倍数行上打印出“foo”,
+在每个5的倍数行上打印“biz”,在每个7的倍数行上打印输出“baz”。
 
+*/
+class ForTest1 {
+    public static void main(String[] args) {
+        for(int i = 1;i &lt;= 150;i++){
+            System.out.print(i + &quot; &quot;);
+            if(i % 3 == 0){
+                System.out.print(&quot;foo &quot;);
+            }
+
+            if(i % 5 == 0){
+                System.out.print(&quot;biz &quot;);
+            }
+
+            if(i % 7 == 0){
+
+                System.out.print(&quot;baz &quot;);
+            }
+
+            System.out.println();
+        }
+    }
+}</code></pre>
 <ul>
 <li>练习2</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">题目：输入两个正整数m和n，求其最大公约数和最小公倍数。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">比如：12和20的最大公约数是4，最小公倍数是60。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">说明：使用在循环中，表示一旦执行break，就跳出循环结构</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ForTest2</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> m,n;</span><br><span class="line">		m = <span class="number">12</span>;</span><br><span class="line">		n = <span class="number">20</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//获取m和n的较小值</span></span><br><span class="line">		<span class="keyword">int</span> min = (m &lt; n)? m : n;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = min;i &gt;= <span class="number">1</span>;i--)&#123;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span>(m % i == <span class="number">0</span> &amp;&amp; n % i == <span class="number">0</span>)&#123;</span><br><span class="line">				System.out.println(<span class="string">"最大公约数为："</span> + i);</span><br><span class="line">				<span class="keyword">break</span>;<span class="comment">//使用在循环中，表示一旦执行break，就跳出循环结构</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//获取m和n的较大值</span></span><br><span class="line">		<span class="keyword">int</span> max = (m &gt; n)? m : n;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = max;i &lt;= m * n;i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(i % m == <span class="number">0</span> &amp;&amp; i % n == <span class="number">0</span>)&#123;</span><br><span class="line">				System.out.println(<span class="string">"最小公倍数为："</span> + i);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">/*
+题目：输入两个正整数m和n，求其最大公约数和最小公倍数。
 
-<h2 id="知识点7：while"><a href="#知识点7：while" class="headerlink" title="知识点7：while"></a>知识点7：while</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">① 初始化条件</span><br><span class="line">② 循环条件  ---&gt;<span class="keyword">boolean</span>类型</span><br><span class="line">③ 循环体</span><br><span class="line">④ 迭代部分</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>循环的结构:</span><br><span class="line">①</span><br><span class="line"><span class="keyword">while</span>(②)&#123;</span><br><span class="line">	③</span><br><span class="line">	④</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">执行过程：① - ② - ③ - ④ - ② - ③ - ④ - ② - ③ - ④ - ... - ②</span><br><span class="line"></span><br><span class="line">说明：</span><br><span class="line"><span class="number">1</span>. <span class="keyword">for</span>循环和<span class="keyword">while</span>循环是可以相互转换的</span><br><span class="line"><span class="number">2</span>. <span class="keyword">while</span>循环结束后，初始化条件中如果定义了变量，还可以继续使用。而<span class="keyword">for</span>循环不可以。</span><br></pre></td></tr></table></figure>
+比如：12和20的最大公约数是4，最小公倍数是60。
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WhileTest</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//遍历100以内的偶数</span></span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span>(i &lt;= <span class="number">100</span>)&#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(i % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">				System.out.println(i);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//一定不要忘了迭代条件！</span></span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//</span></span><br><span class="line">		System.out.println(i);<span class="comment">//101</span></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+说明：使用在循环中，表示一旦执行break，就跳出循环结构
+
+*/
+class ForTest2 {
+    public static void main(String[] args) {
+        int m,n;
+        m = 12;
+        n = 20;
+
+        //获取m和n的较小值
+        int min = (m &lt; n)? m : n;
+
+        for(int i = min;i &gt;= 1;i--){
+
+            if(m % i == 0 &amp;&amp; n % i == 0){
+                System.out.println(&quot;最大公约数为：&quot; + i);
+                break;//使用在循环中，表示一旦执行break，就跳出循环结构
+            }
+        }
 
 
+        //获取m和n的较大值
+        int max = (m &gt; n)? m : n;
 
-<h2 id="知识点8：do-while"><a href="#知识点8：do-while" class="headerlink" title="知识点8：do-while"></a>知识点8：do-while</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">① 初始化条件</span><br><span class="line">② 循环条件  ---&gt;<span class="keyword">boolean</span>类型</span><br><span class="line">③ 循环体</span><br><span class="line">④ 迭代部分</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span>-<span class="keyword">while</span>循环的结构:</span><br><span class="line"></span><br><span class="line">①</span><br><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">	③</span><br><span class="line">	④</span><br><span class="line">&#125;<span class="keyword">while</span>(②);</span><br><span class="line"></span><br><span class="line">执行过程：① - ③ - ④ - ② - ③ - ④ - ② - ... - ②</span><br><span class="line"></span><br><span class="line">说明：<span class="keyword">do</span>-<span class="keyword">while</span>循环的循环体至少执行一次！</span><br><span class="line"></span><br><span class="line">开发中使用<span class="keyword">for</span>和<span class="keyword">while</span>居多。</span><br></pre></td></tr></table></figure>
+        for(int i = max;i &lt;= m * n;i++){
+            if(i % m == 0 &amp;&amp; i % n == 0){
+                System.out.println(&quot;最小公倍数为：&quot; + i);
+                break;
+            }
+        }
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DoWhileTest</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//遍历100以内的偶数</span></span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">do</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(i % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">				System.out.println(i);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			i++;</span><br><span class="line"></span><br><span class="line">		&#125;<span class="keyword">while</span>(i &lt;= <span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//########测试：do-while至少会执行一次################</span></span><br><span class="line">		<span class="keyword">int</span> num = <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">do</span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"hello,do-while!"</span>);</span><br><span class="line">			</span><br><span class="line">			num--;</span><br><span class="line"></span><br><span class="line">		&#125;<span class="keyword">while</span>(num &gt; <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//#################</span></span><br><span class="line">		<span class="keyword">int</span> num1 = <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">while</span>(num1 &gt; <span class="number">10</span>)&#123;</span><br><span class="line">			System.out.println(<span class="string">"hello,while!"</span>);</span><br><span class="line">			</span><br><span class="line">			num1--;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    }
+}
+</code></pre>
+<h2 id="知识点7：while"><a href="#知识点7：while" class="headerlink" title="知识点7：while"></a>知识点7：while</h2><pre><code class="java">① 初始化条件
+② 循环条件  ---&gt;boolean类型
+③ 循环体
+④ 迭代部分
+
+while循环的结构:
+①
+while(②){
+    ③
+    ④
+}
+
+执行过程：① - ② - ③ - ④ - ② - ③ - ④ - ② - ③ - ④ - ... - ②
+
+说明：
+1. for循环和while循环是可以相互转换的
+2. while循环结束后，初始化条件中如果定义了变量，还可以继续使用。而for循环不可以。</code></pre>
+<pre><code class="java">class WhileTest {
+    public static void main(String[] args) {
+
+        //遍历100以内的偶数
+        int i = 1;
+        while(i &lt;= 100){
+
+            if(i % 2 == 0){
+                System.out.println(i);
+            }
+            //一定不要忘了迭代条件！
+            i++;
+        }
+        //
+        System.out.println(i);//101
+
+    }
+}</code></pre>
+<h2 id="知识点8：do-while"><a href="#知识点8：do-while" class="headerlink" title="知识点8：do-while"></a>知识点8：do-while</h2><pre><code class="java">① 初始化条件
+② 循环条件  ---&gt;boolean类型
+③ 循环体
+④ 迭代部分
+
+do-while循环的结构:
+
+①
+do{
+    ③
+    ④
+}while(②);
+
+执行过程：① - ③ - ④ - ② - ③ - ④ - ② - ... - ②
+
+说明：do-while循环的循环体至少执行一次！
+
+开发中使用for和while居多。</code></pre>
+<pre><code class="java">class DoWhileTest {
+    public static void main(String[] args) {
+
+        //遍历100以内的偶数
+        int i = 1;
+        do{
+            if(i % 2 == 0){
+                System.out.println(i);
+            }
+
+            i++;
+
+        }while(i &lt;= 100);
+
+        //########测试：do-while至少会执行一次################
+        int num = 10;
+        do{
+            System.out.println(&quot;hello,do-while!&quot;);
+
+            num--;
+
+        }while(num &gt; 10);
+
+        //#################
+        int num1 = 10;
+        while(num1 &gt; 10){
+            System.out.println(&quot;hello,while!&quot;);
+
+            num1--;
+        }
 
 
+    }
+}</code></pre>
+<h2 id="知识点9：嵌套循环"><a href="#知识点9：嵌套循环" class="headerlink" title="知识点9：嵌套循环"></a>知识点9：嵌套循环</h2><pre><code class="java">嵌套循环的使用
 
-<h2 id="知识点9：嵌套循环"><a href="#知识点9：嵌套循环" class="headerlink" title="知识点9：嵌套循环"></a>知识点9：嵌套循环</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">嵌套循环的使用</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>. 理解：在一个循环结构A的循环体中，又出现了另一个循环结构B。则构成嵌套循环。</span><br><span class="line">   其中，循环结构A称为外层循环；循环结构B称为内层循环</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>. 外层循环每执行一次，内层循环就需要完成的遍历一遍所有的数据。</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>. 外层循环遍历m次，内层循环遍历n次，则内层循环的循环体一共需要执行m * n次</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>. 技巧：外层循环控制行数，内层循环控制列数</span><br></pre></td></tr></table></figure>
+1. 理解：在一个循环结构A的循环体中，又出现了另一个循环结构B。则构成嵌套循环。
+   其中，循环结构A称为外层循环；循环结构B称为内层循环
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ForForTest</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//********</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">8</span>;i++)&#123;</span><br><span class="line">			System.out.print(<span class="string">"*"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println();</span><br><span class="line">		System.out.println();</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		********</span></span><br><span class="line"><span class="comment">		********</span></span><br><span class="line"><span class="comment">		********</span></span><br><span class="line"><span class="comment">		********</span></span><br><span class="line"><span class="comment">		********</span></span><br><span class="line"><span class="comment">		*/</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">5</span>;i++)&#123;<span class="comment">//外层循环</span></span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j &lt;= <span class="number">8</span>;j++)&#123;<span class="comment">//内层循环</span></span><br><span class="line">				System.out.print(<span class="string">"*"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">/*			i		j(*的个数)   j == i</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">		*			1		1		</span></span><br><span class="line"><span class="comment">		**			2		2</span></span><br><span class="line"><span class="comment">		***			3		3</span></span><br><span class="line"><span class="comment">		****		4		4</span></span><br><span class="line"><span class="comment">		*****		5		5</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">		*/</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">5</span>;i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j &lt;= i;j++)&#123;</span><br><span class="line">				</span><br><span class="line">				System.out.print(<span class="string">"*"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">						i		j(*的个数)		i + j = 5  -&gt;  j = 5 - i</span></span><br><span class="line"><span class="comment">		****			1		4</span></span><br><span class="line"><span class="comment">		***				2		3</span></span><br><span class="line"><span class="comment">		**				3		2</span></span><br><span class="line"><span class="comment">		*				4		1</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">		*/</span>	</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">4</span>;i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j &lt;= <span class="number">5</span> - i;j++)&#123;</span><br><span class="line">				System.out.print(<span class="string">"*"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">----* </span></span><br><span class="line"><span class="comment">---* * </span></span><br><span class="line"><span class="comment">--* * * </span></span><br><span class="line"><span class="comment">-* * * * </span></span><br><span class="line"><span class="comment">* * * * * </span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">-* * * * </span></span><br><span class="line"><span class="comment">--* * * </span></span><br><span class="line"><span class="comment">---* * </span></span><br><span class="line"><span class="comment">----* </span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span>		</span><br><span class="line">		<span class="comment">//上半部分</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">5</span>;i++)&#123;</span><br><span class="line">			<span class="comment">//-</span></span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j &lt;= <span class="number">5</span> - i;j++)&#123;</span><br><span class="line">				System.out.print(<span class="string">" "</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//*</span></span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j &lt;= i;j++)&#123;</span><br><span class="line">				</span><br><span class="line">				System.out.print(<span class="string">"* "</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+2. 外层循环每执行一次，内层循环就需要完成的遍历一遍所有的数据。
 
+3. 外层循环遍历m次，内层循环遍历n次，则内层循环的循环体一共需要执行m * n次
+
+4. 技巧：外层循环控制行数，内层循环控制列数</code></pre>
+<pre><code class="java">class ForForTest {
+    public static void main(String[] args) {
+
+        //********
+        for(int i = 1;i &lt;= 8;i++){
+            System.out.print(&quot;*&quot;);
+        }
+        System.out.println();
+        System.out.println();
+        /*
+        ********
+        ********
+        ********
+        ********
+        ********
+        */
+
+        for(int i = 1;i &lt;= 5;i++){//外层循环
+            for(int j = 1;j &lt;= 8;j++){//内层循环
+                System.out.print(&quot;*&quot;);
+            }
+            System.out.println();
+
+        }
+
+        /*            i        j(*的个数)   j == i
+
+        *            1        1        
+        **            2        2
+        ***            3        3
+        ****        4        4
+        *****        5        5
+
+        */
+        for(int i = 1;i &lt;= 5;i++){
+            for(int j = 1;j &lt;= i;j++){
+
+                System.out.print(&quot;*&quot;);
+            }
+            System.out.println();
+
+        }
+        /*
+                        i        j(*的个数)        i + j = 5  -&gt;  j = 5 - i
+        ****            1        4
+        ***                2        3
+        **                3        2
+        *                4        1
+
+        */    
+        for(int i = 1;i &lt;= 4;i++){
+            for(int j = 1;j &lt;= 5 - i;j++){
+                System.out.print(&quot;*&quot;);
+            }
+            System.out.println();
+        }
+/*
+
+----* 
+---* * 
+--* * * 
+-* * * * 
+* * * * * 
+
+
+-* * * * 
+--* * * 
+---* * 
+----* 
+
+*/        
+        //上半部分
+        for(int i = 1;i &lt;= 5;i++){
+            //-
+            for(int j = 1;j &lt;= 5 - i;j++){
+                System.out.print(&quot; &quot;);
+            }
+            //*
+            for(int j = 1;j &lt;= i;j++){
+
+                System.out.print(&quot;* &quot;);
+            }
+            System.out.println();
+
+        }
+
+    }
+}</code></pre>
 <ul>
 <li>练习：九九乘法表</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*</span><br><span class="line">九九乘法表</span><br><span class="line"></span><br><span class="line">1 * 1 &#x3D; 1</span><br><span class="line">1 * 2 &#x3D; 2  2 * 2 &#x3D; 4</span><br><span class="line">1 * 3 &#x3D; 3 ... 3 * 3 &#x3D; 9</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">1 * 9 &#x3D; 9 ... 9 * 9 &#x3D; 81</span><br><span class="line"></span><br><span class="line">*&#x2F;</span><br><span class="line">class NineNineTable &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		</span><br><span class="line">		for(int i &#x3D; 1;i &lt;&#x3D; 9;i++)&#123;</span><br><span class="line">			</span><br><span class="line">			for(int j &#x3D; 1;j &lt;&#x3D; i;j++)&#123;</span><br><span class="line">				</span><br><span class="line">				System.out.print(j + &quot;*&quot; + i + &quot;&#x3D;&quot; + j * i + &quot;  &quot;);</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>/*
+九九乘法表
 
-<ul>
+1 * 1 = 1
+1 * 2 = 2  2 * 2 = 4
+1 * 3 = 3 ... 3 * 3 = 9
+...
+
+1 * 9 = 9 ... 9 * 9 = 81
+
+*/
+class NineNineTable {
+    public static void main(String[] args) {
+
+        for(int i = 1;i &lt;= 9;i++){
+
+            for(int j = 1;j &lt;= i;j++){
+
+                System.out.print(j + &quot;*&quot; + i + &quot;=&quot; + j * i + &quot;  &quot;);
+
+            }
+            System.out.println();
+        }
+
+    }
+}
+</code></pre><ul>
 <li><p>质数的输出</p>
 <ul>
 <li>基本实现：</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">100以内的所有质数</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">质数（素数）：只能被1和它本身整除的自然数。 --&gt; 从2开始到这个数-1为止，没有任何一个自然数是这个数本身的约数。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">比如：2 3 5 7 11 ....    8 (2-7)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PrimeNumberTest</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		方式一：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">		for(int i = 2;i &lt;= 100;i++)&#123;</span></span><br><span class="line"><span class="comment">			int count = 0;</span></span><br><span class="line"><span class="comment">			for(int j = 2;j &lt; i;j++)&#123;</span></span><br><span class="line"><span class="comment">				</span></span><br><span class="line"><span class="comment">				if(i % j != 0)&#123;</span></span><br><span class="line"><span class="comment">					count++;</span></span><br><span class="line"><span class="comment">				&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">			&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">			if(count == i - 2)&#123;</span></span><br><span class="line"><span class="comment">				System.out.println(i);</span></span><br><span class="line"><span class="comment">			&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">			</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">		*/</span></span><br><span class="line">		<span class="comment">//方式二</span></span><br><span class="line">		<span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i &lt;= <span class="number">100</span>;i++)&#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">2</span>;j &lt; i;j++)&#123;</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">if</span>(i % j == <span class="number">0</span>)&#123;</span><br><span class="line">					flag = <span class="keyword">false</span>;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span>(flag)&#123;<span class="comment">//if(flag == true)&#123;</span></span><br><span class="line">				System.out.println(i);</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			flag = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">/*
+100以内的所有质数
 
+质数（素数）：只能被1和它本身整除的自然数。 --&gt; 从2开始到这个数-1为止，没有任何一个自然数是这个数本身的约数。
 
+比如：2 3 5 7 11 ....    8 (2-7)
+*/
+class PrimeNumberTest {
+    public static void main(String[] args) {
+        /*
+        方式一：
 
+        for(int i = 2;i &lt;= 100;i++){
+            int count = 0;
+            for(int j = 2;j &lt; i;j++){
+
+                if(i % j != 0){
+                    count++;
+                }
+
+            }
+
+            if(count == i - 2){
+                System.out.println(i);
+            }
+
+</code></pre>
 </li>
 </ul>
-<ul>
-<li><p>优化以后：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">100以内的所有质数</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">优化的操作</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">如何衡量一个算法的优劣？</span></span><br><span class="line"><span class="comment">&gt; 时间复杂度（更关注）</span></span><br><span class="line"><span class="comment">&gt; 空间复杂度</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PrimeNumberTest1</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">long</span> start = System.currentTimeMillis();<span class="comment">//开始时间</span></span><br><span class="line">		<span class="keyword">int</span> count = <span class="number">0</span>;<span class="comment">//记录质数的个数</span></span><br><span class="line">		<span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i &lt;= <span class="number">100000</span>;i++)&#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">2</span>;j &lt;= Math.sqrt(i);j++)&#123;<span class="comment">//优化二：临界值改为Math.sqrt(i)</span></span><br><span class="line">				</span><br><span class="line">				<span class="keyword">if</span>(i % j == <span class="number">0</span>)&#123;</span><br><span class="line">					flag = <span class="keyword">false</span>;</span><br><span class="line">					<span class="keyword">break</span>;<span class="comment">//优化一：针对于非质数</span></span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span>(flag)&#123;<span class="comment">//if(flag == true)&#123;</span></span><br><span class="line">				<span class="comment">//System.out.println(i);</span></span><br><span class="line">				count++;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			flag = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">long</span> end = System.currentTimeMillis();<span class="comment">//结束时间</span></span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">"花费的时间为："</span> + (end - start));<span class="comment">//14943 - 1675  - 543</span></span><br><span class="line">		System.out.println(count);<span class="comment">//9592</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>      }
+      */
+      //方式二
+      boolean flag = true;
+      for(int i = 2;i &lt;= 100;i++){
+
+          for(int j = 2;j &lt; i;j++){
+
+              if(i % j == 0){
+                  flag = false;
+              }
+
+          }
+
+          if(flag){//if(flag == true){
+              System.out.println(i);
+          }
+
+          flag = true;
+
+      }
+
+  }</code></pre><p>  }</p>
+<pre><code>
 
 
+  - 优化以后：
 
-</li>
-</ul>
-<ul>
+  ```java
+  /*
+  100以内的所有质数
+
+  优化的操作
+
+  如何衡量一个算法的优劣？
+  &gt; 时间复杂度（更关注）
+  &gt; 空间复杂度
+
+
+  */
+  class PrimeNumberTest1 {
+      public static void main(String[] args) {
+
+          long start = System.currentTimeMillis();//开始时间
+          int count = 0;//记录质数的个数
+          boolean flag = true;
+          for(int i = 2;i &lt;= 100000;i++){
+
+              for(int j = 2;j &lt;= Math.sqrt(i);j++){//优化二：临界值改为Math.sqrt(i)
+
+                  if(i % j == 0){
+                      flag = false;
+                      break;//优化一：针对于非质数
+                  }
+
+              }
+
+              if(flag){//if(flag == true){
+                  //System.out.println(i);
+                  count++;
+              }
+
+              flag = true;
+
+          }
+
+          long end = System.currentTimeMillis();//结束时间
+
+          System.out.println(&quot;花费的时间为：&quot; + (end - start));//14943 - 1675  - 543
+          System.out.println(count);//9592
+      }
+  }
+</code></pre><ul>
 <li><p>使用带标签的continue的实现：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用带标签的continue的实现</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PrimeNumberTest2</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		l:<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i &lt;= <span class="number">100</span>;i++)&#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">2</span>;j &lt;= Math.sqrt(i);j++)&#123;<span class="comment">//优化二：临界值改为Math.sqrt(i)</span></span><br><span class="line">				</span><br><span class="line">				<span class="keyword">if</span>(i % j == <span class="number">0</span>)&#123;</span><br><span class="line">					<span class="keyword">continue</span> l;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			System.out.println(i);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">//使用带标签的continue的实现
+class PrimeNumberTest2 {
+  public static void main(String[] args) {
 
+      l:for(int i = 2;i &lt;= 100;i++){
 
+          for(int j = 2;j &lt;= Math.sqrt(i);j++){//优化二：临界值改为Math.sqrt(i)
 
+              if(i % j == 0){
+                  continue l;
+              }
+
+          }
+
+          System.out.println(i);
+
+      }
+
+  }
+}
+</code></pre>
 </li>
 </ul>
-<h3 id="如何结束一个循环结构"><a href="#如何结束一个循环结构" class="headerlink" title="如何结束一个循环结构"></a>如何结束一个循环结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 循环结构如果不结束，那就是一个死循环！</span><br><span class="line">2. 开发中，要避免出现死循环！</span><br><span class="line">3. 如何结束一个循环结构呢？</span><br><span class="line">    &gt; 方式一：循环条件返回false</span><br><span class="line">	&gt; 方式二：循环体中执行break</span><br><span class="line"></span><br><span class="line">4. while(true) 或 for(;;)的使用</span><br></pre></td></tr></table></figure>
+<h3 id="如何结束一个循环结构"><a href="#如何结束一个循环结构" class="headerlink" title="如何结束一个循环结构"></a>如何结束一个循环结构</h3><pre><code>1. 循环结构如果不结束，那就是一个死循环！
+2. 开发中，要避免出现死循环！
+3. 如何结束一个循环结构呢？
+    &gt; 方式一：循环条件返回false
+    &gt; 方式二：循环体中执行break
 
-<ul>
+4. while(true) 或 for(;;)的使用</code></pre><ul>
 <li>练习</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ForWhileTest</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">int</span> positiveNumber = <span class="number">0</span>;<span class="comment">//记录正数的个数</span></span><br><span class="line">		<span class="keyword">int</span> negativeNumber = <span class="number">0</span>;<span class="comment">//记录负数的个数</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span>(;;)&#123;<span class="comment">//while(true)&#123;</span></span><br><span class="line">			System.out.println(<span class="string">"请输入一个整数。（退出请输入0）"</span>);</span><br><span class="line">			<span class="keyword">int</span> num = scan.nextInt();</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(num == <span class="number">0</span>)&#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(num &gt; <span class="number">0</span>)&#123;<span class="comment">//正数</span></span><br><span class="line">				positiveNumber++;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;<span class="comment">//负数</span></span><br><span class="line">				negativeNumber++;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"正数的个数为："</span> + positiveNumber);</span><br><span class="line">		System.out.println(<span class="string">"负数的个数为："</span> + negativeNumber);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">class ForWhileTest {
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        int positiveNumber = 0;//记录正数的个数
+        int negativeNumber = 0;//记录负数的个数
+
+        for(;;){//while(true){
+            System.out.println(&quot;请输入一个整数。（退出请输入0）&quot;);
+            int num = scan.nextInt();
+
+            if(num == 0){
+                break;
+            }else if(num &gt; 0){//正数
+                positiveNumber++;
+            }else{//负数
+                negativeNumber++;
+            }
 
 
+        }
 
-<h2 id="知识点10：break和continue"><a href="#知识点10：break和continue" class="headerlink" title="知识点10：break和continue"></a>知识点10：break和continue</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">break和continue关键字的使用</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">			使用范围				在循环结构中表示的意思			共同点</span></span><br><span class="line"><span class="comment">break:		switch-case</span></span><br><span class="line"><span class="comment">			循环结构				跳出当前循环					在关键字的后面不能编写执行语句</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">continue:	循环结构				跳出当次循环					在关键字的后面不能编写执行语句</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">了解带标签的break和continue的使用</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BreakContinueTest</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">10</span>;i++)&#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(i % <span class="number">4</span> == <span class="number">0</span>)&#123;</span><br><span class="line">				<span class="comment">//break;</span></span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">				<span class="comment">//不能编写执行语句</span></span><br><span class="line">				<span class="comment">//System.out.println("今晚迪丽热巴请我吃饭！！");</span></span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			System.out.print(i);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"#######################"</span>);</span><br><span class="line">		<span class="comment">//##############################</span></span><br><span class="line">		label:<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">5</span>;i++)&#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j &lt;= <span class="number">10</span>;j++)&#123;</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">if</span>(j % <span class="number">4</span> == <span class="number">0</span>)&#123;</span><br><span class="line">					<span class="comment">//break;//默认：结束包裹break关键字的最近的一层循环。</span></span><br><span class="line">					<span class="comment">//continue;//默认：结束包裹continue关键字的最近的一次循环。</span></span><br><span class="line">					</span><br><span class="line">					<span class="comment">//了解带标签的break和continue的使用</span></span><br><span class="line">					<span class="comment">//break label;</span></span><br><span class="line">					<span class="keyword">continue</span> label;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				System.out.print(j);</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        System.out.println(&quot;正数的个数为：&quot; + positiveNumber);
+        System.out.println(&quot;负数的个数为：&quot; + negativeNumber);
+    }
+}</code></pre>
+<h2 id="知识点10：break和continue"><a href="#知识点10：break和continue" class="headerlink" title="知识点10：break和continue"></a>知识点10：break和continue</h2><pre><code class="java">/*
+break和continue关键字的使用
 
+
+            使用范围                在循环结构中表示的意思            共同点
+break:        switch-case
+            循环结构                跳出当前循环                    在关键字的后面不能编写执行语句
+
+continue:    循环结构                跳出当次循环                    在关键字的后面不能编写执行语句
+
+
+了解带标签的break和continue的使用
+*/
+class BreakContinueTest {
+    public static void main(String[] args) {
+
+        for(int i = 1;i &lt;= 10;i++){
+
+            if(i % 4 == 0){
+                //break;
+                continue;
+                //不能编写执行语句
+                //System.out.println(&quot;今晚迪丽热巴请我吃饭！！&quot;);
+            }
+
+            System.out.print(i);
+
+        }
+        System.out.println(&quot;#######################&quot;);
+        //##############################
+        label:for(int i = 1;i &lt;= 5;i++){
+
+            for(int j = 1;j &lt;= 10;j++){
+
+                if(j % 4 == 0){
+                    //break;//默认：结束包裹break关键字的最近的一层循环。
+                    //continue;//默认：结束包裹continue关键字的最近的一次循环。
+
+                    //了解带标签的break和continue的使用
+                    //break label;
+                    continue label;
+                }
+
+                System.out.print(j);
+
+            }
+
+
+            System.out.println();
+        }
+
+    }
+}</code></pre>
 
             </div>
             <hr/>
@@ -924,6 +2019,43 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="2020/06/11/hello-world/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-11
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Cathree
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="1970/01/01/day01学习笔记/">
                     <div class="card-image">
                         
@@ -944,43 +2076,6 @@
 第二代：汇编语言
 第三代：高级语言
 &gt; 面向过程的语
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>1970-01-01
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Cathree
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="1970/01/01/day05授课笔记/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="day05授课笔记">
-                        
-                        <span class="card-title">day05授课笔记</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Day05学习笔记–面向对象知识点1：面向对象的理解1. 面向过程  vs  面向对象二者都是一种思想，面向对象是相对于面向过程而言的。面向过程，强调的是功能行为，以函数为最小单位，考虑怎么做。面向对象，将功能封装进对象，强调具备了功能的对
                         
                     </div>
                     <div class="publish-info">

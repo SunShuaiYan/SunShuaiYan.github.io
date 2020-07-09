@@ -29,7 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="atom.xml" title="阿彦的自留地" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -610,13 +611,13 @@ JVM(Java Virtual Machine   Java虚拟机)</code></pre><h3 id="2-下载、安装J
 <p>src.zip：存放java的源代码</p>
 </blockquote>
 <h3 id="4-配置环境变量"><a href="#4-配置环境变量" class="headerlink" title="4. 配置环境变量"></a>4. 配置环境变量</h3><p><img src="assets/1592812639135.png" alt="1592812639135"></p>
-<h2 id="知识点4：HelloWorld"><a href="#知识点4：HelloWorld" class="headerlink" title="知识点4：HelloWorld"></a>知识点4：HelloWorld</h2><h3 id="1-编写程序"><a href="#1-编写程序" class="headerlink" title="1. 编写程序"></a>1. 编写程序</h3><pre><code class="java">class HelloChina{
-    public static void main(String[] args){ //args: arguments 参数
-        System.out.println(&quot;hello,China!!&quot;);
-        System.out.println(&quot;hello,China!!&quot;);
-        System.out.println(123 * 71);
-    }
-}
+<h2 id="知识点4：HelloWorld"><a href="#知识点4：HelloWorld" class="headerlink" title="知识点4：HelloWorld"></a>知识点4：HelloWorld</h2><h3 id="1-编写程序"><a href="#1-编写程序" class="headerlink" title="1. 编写程序"></a>1. 编写程序</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">HelloChina</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//args: arguments 参数</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"hello,China!!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"hello,China!!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token number">123</span> <span class="token operator">*</span> <span class="token number">71</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="2-执行过程"><a href="#2-执行过程" class="headerlink" title="2.执行过程"></a>2.执行过程</h3><p><img src="assets/1592812707191.png" alt="1592812707191"></p>
 <blockquote>
@@ -634,7 +635,7 @@ JVM(Java Virtual Machine   Java虚拟机)</code></pre><h3 id="2-下载、安装J
 <li><p>每一行执行语句最后以;结尾！！</p>
 </li>
 </ul>
-<h2 id="知识点5：注释"><a href="#知识点5：注释" class="headerlink" title="知识点5：注释"></a>知识点5：注释</h2><pre><code class="java">/*
+<h2 id="知识点5：注释"><a href="#知识点5：注释" class="headerlink" title="知识点5：注释"></a>知识点5：注释</h2><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*
 Java有三种注释信息：
 方式一：单行注释   //
 方式二：多行注释   
@@ -651,30 +652,30 @@ Java有三种注释信息：
 
 作用：注释内容可以被JDK提供的工具 javadoc 所解析，生成一套以网页文件形式体现的该程序的说明文档。
 
-*/
-/**
+*/</span>
+<span class="token comment" spellcheck="true">/**
 文档注释信息：
 @author shkstart
 @version 1.0
 @date 2020-6-22
 
 这是我的第一个java程序！感觉很不错！！
-*/
-public class TestComment{
-    /*
+*/</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestComment</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/*
     这是程序的入口
     格式是固定的！
 
-    */
-    /**
+    */</span>
+    <span class="token comment" spellcheck="true">/**
     这是main()方法，作为程序的入口
-    */
-    public static void main(String args[]) { //args : arguments的缩写
-        System.out.print(&quot;Hello World!&quot;); //print():输出内部的数据即可
-        System.out.println(&quot;Hello World!&quot;);//println():输出内部的数据之后，换行
-        //System.out.println(&quot;Hello World!&quot;)
-    }
-}</code></pre>
+    */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//args : arguments的缩写</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//print():输出内部的数据即可</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//println():输出内部的数据之后，换行</span>
+        <span class="token comment" spellcheck="true">//System.out.println("Hello World!")</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p>如何生成javadoc对应的文档？</p>
 <p><img src="assets/1592812916322.png" alt="1592812916322"></p>
 <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p><strong>1. 编写-编译-运行的过程：</strong></p>
@@ -682,12 +683,12 @@ public class TestComment{
 <li>编写一个java文件，名为：HelloWorld.java</li>
 </ul>
 <p>内容为：</p>
-<pre><code class="java">class HelloChina{
-    public static void main(String[] args){ 
-        System.out.println(&quot;hello,China!!&quot;);
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">HelloChina</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span> 
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"hello,China!!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    }
-}</code></pre>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <ul>
 <li>编译：javac HelloWorld.java</li>
 </ul>
@@ -696,20 +697,20 @@ public class TestComment{
 <li>运行：java HelloChina </li>
 </ul>
 <p><strong>2. 一个java源文件中可以编写多个java类。编译之后，会生成多个以类名命名的字节码文件</strong></p>
-<pre><code class="java">class HelloShangHai {
-    public static void main(String[] args) {
-        System.out.println(&quot;Hello World!&quot;);
-    }
-}
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">HelloShangHai</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-class SongJiang{
-}
+<span class="token keyword">class</span> <span class="token class-name">SongJiang</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
 
-class Person{
-}
+<span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
 
-class Dog{
-}</code></pre>
+<span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span></code></pre>
 <p><img src="assets/1592813330208.png" alt="1592813330208"></p>
 <p><strong>3. 一个java源文件中，最多只能有一个类声明为public的。且此类的类名，必须有java源文件名相同</strong></p>
 <p><strong>4. java语言严格区分大小写</strong></p>
@@ -752,36 +753,54 @@ class Dog{
 5. 给标识符命名时，要见名知意。</code></pre><ul>
 <li>对应的代码测试</li>
 </ul>
-<pre><code class="java">class IdentifierTest {
-    public static void main(String[] args) {
-        System.out.println(&quot;Hello World!&quot;);
-    }
-}
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">IdentifierTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-class _8hello1
-{
-}
+<span class="token keyword">class</span> <span class="token class-name">_8hello1</span>
+<span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
 
-class public1{
-}
+<span class="token keyword">class</span> <span class="token class-name">public1</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
 
-class Goto{
-}
+<span class="token keyword">class</span> <span class="token class-name">Goto</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
 
-class Ren{
-}
-class staticvoid{
-}
+<span class="token keyword">class</span> <span class="token class-name">Ren</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">staticvoid</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
 
-class Hello123{
+<span class="token keyword">class</span> <span class="token class-name">Hello123</span><span class="token punctuation">{</span>
 
-}
-/*
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">/*
 class hello123{
 
 }
-*/</code></pre>
-
+*/</span></code></pre>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -806,7 +825,7 @@ class hello123{
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="SunShuaiYan.github.io1970/01/01/day01学习笔记/">SunShuaiYan.github.io1970/01/01/day01学习笔记/</a>
+                    <a href="SunShuaiYan.github.io1970/01/01/day01-xue-xi-bi-ji/">SunShuaiYan.github.io1970/01/01/day01-xue-xi-bi-ji/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1013,7 +1032,50 @@ class hello123{
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="1970/01/01/day03 学习笔记/">
+                <a href="1970/01/01/day02-xue-xi-bi-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="day02学习笔记">
+                        
+                        <span class="card-title">day02学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Day2学习笔记–变量、运算符知识点1：变量
+说明
+
+1. java中的变量定义的规则：数据类型 变量名 = 变量值
+2. 注意点：
+① 变量必须在初始化之后，才能使用
+② 每个变量都有其声明所在的作用域。在其作用域内都可以使用。出了作用域
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>1970-01-01
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Cathree
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="1970/01/01/day03-xue-xi-bi-ji/">
                     <div class="card-image">
                         
                         
@@ -1042,49 +1104,6 @@ if(条件表达式){
 }
 else{
     执行代码
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>1970-01-01
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Cathree
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="1970/01/01/day02学习笔记/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="day02学习笔记">
-                        
-                        <span class="card-title">day02学习笔记</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Day2学习笔记–变量、运算符知识点1：变量
-说明
-
-1. java中的变量定义的规则：数据类型 变量名 = 变量值
-2. 注意点：
-① 变量必须在初始化之后，才能使用
-② 每个变量都有其声明所在的作用域。在其作用域内都可以使用。出了作用域
                         
                     </div>
                     <div class="publish-info">
